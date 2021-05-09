@@ -9,7 +9,7 @@ There are two types of bools: _Level_ and _Edge_. \
 _Level_ bools == (keep true whenever) player is doing something\
 _Edge_ bools == (true for one tick if) player did something
 
-The following is a list of all the bools:
+The following is a list of all the tags:
 | Name | Type | Meaning |
 | --- | :------ | :------ |
 | walk_bool      | level | is     walking
