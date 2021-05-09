@@ -8,3 +8,5 @@ Therefore these tags are read-only and should NOT be modified by anything outsid
 There are two types of bools: level and edge. \
 Level bools == (keep true whenever) player is doing something\
 Edge bools == (true for one tick if) player did something
+
+The following is a list of all the bools:
