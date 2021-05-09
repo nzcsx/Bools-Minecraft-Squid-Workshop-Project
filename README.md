@@ -12,8 +12,10 @@ _Edge_ bools == (true for one tick if) player did something
 The following is a list of all the bools:
 | Name | Type | Meaning |
 | --- | :------ | :------ |
-| walk_bool   | level | is walking
+| walk_bool   | level | is     walking
 | walk_begin  | edge  | starts walking
-| walk_end    | edge  | stops walking
-| shift_bool  | level | is pressing shift
+| walk_end    | edge  | stops  walking
+| shift_bool  | level | is     pressing shift
 | shift_begin | edge  | starts pressing shift
+| shift_end   | edge  | stops  pressing shift
+| sprint_bool | level | is     sprinting
