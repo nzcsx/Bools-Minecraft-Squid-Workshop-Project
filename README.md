@@ -1,13 +1,10 @@
 # _Squid Workshop's_ Bools Data Pack
 
-This folder is for global boolean variables. These bools translate player's actions game data into the form of tags. 
-
+This folder is for global boolean variables. These bools translate player's actions game data into the form of tags. \
 (Tagged == True, Untagged == False) 
 
 Therefore these tags are read-only and should NOT be modified by anything outside this pack.
 
-There are two types of bools: level and edge. 
-
-Level bools == (keep true whenever) player is doing something
-
+There are two types of bools: level and edge. \
+Level bools == (keep true whenever) player is doing something\
 Edge bools == (true for one tick if) player did something
