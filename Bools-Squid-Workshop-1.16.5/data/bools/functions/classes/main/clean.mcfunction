@@ -1,5 +1,5 @@
 ########################################
-# Delete all the helper variables
+# Remove all the helper variables
 scoreboard objectives remove walk_helper
 scoreboard objectives remove shift_helper
 scoreboard objectives remove sprint_helper
@@ -57,5 +57,5 @@ tag @a remove container_bool
 
 
 ########################################
-# Delete bools_timer variables
+# Remove bools_timer variables
 scoreboard objectives remove bools_timer

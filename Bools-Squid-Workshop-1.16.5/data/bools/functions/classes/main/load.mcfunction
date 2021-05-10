@@ -1,4 +1,8 @@
 ########################################
+# Remove all the objectives and tags
+function bools:classes/main/clean
+
+########################################
 # Create all the helper variables
 scoreboard objectives add walk_helper minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add shift_helper minecraft.custom:minecraft.sneak_time
