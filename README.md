@@ -69,3 +69,36 @@ The following is a list of all the tags:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # Mechanism
+
+# Project Tree
+See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/master/CONTRIBUTING.md) for our standard datapack structure and how this structure works.
+
+	  Bools-Datapack-Squid-Workshop-1.16.5
+	    │  pack.mcmeta
+	    │  pack.png
+	    │  
+	    └─data
+		├─app
+		│  └─functions
+		│      │  help.mcfunction
+		│      │  
+		│      └─unload
+		│              bools.mcfunction
+		│              
+		├─bools
+		│  └─functions
+		│      └─classes
+		│          ├─bools
+		│          │      check_every_tick.mcfunction
+		│          │      check_three_ticks.mcfunction
+		│          │      
+		│          └─main
+		│                  clean.mcfunction
+		│                  load.mcfunction
+		│                  tick.mcfunction
+		│                  
+		└─minecraft
+		    └─tags
+			└─functions
+				load.json
+				tick.json
