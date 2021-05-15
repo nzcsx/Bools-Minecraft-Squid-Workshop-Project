@@ -6,7 +6,6 @@ A minecraft datapack library for global boolean system, which translates player'
 - [Usage](#Usage)
 - [Mechanism](#Mechanism)
 - [Project Tree](#Project-Tree)
-- [Incompactibility](#Incompactibility)
 - [Terms of Use](#Terms-of-Use)
 - [More About Squid Workshop](#More-About-Squid-Workshop)
 
