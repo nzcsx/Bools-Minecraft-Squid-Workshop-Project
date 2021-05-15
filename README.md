@@ -87,15 +87,14 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 		│              
 		├─bools
 		│  └─functions
-		│      └─classes
-		│          ├─bools
-		│          │      check_every_tick.mcfunction
-		│          │      check_three_ticks.mcfunction
-		│          │      
-		│          └─main
-		│                  clean.mcfunction
-		│                  load.mcfunction
-		│                  tick.mcfunction
+		│      └─classes  
+		│          ├─main
+		│          │       clean.mcfunction
+		│          │       load.mcfunction
+		│          │       tick.mcfunction
+		│          └─bools
+		│                  check_every_tick.mcfunction
+		│                  check_three_ticks.mcfunction
 		│                  
 		└─minecraft
 		    └─tags
