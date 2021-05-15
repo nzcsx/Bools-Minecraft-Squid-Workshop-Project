@@ -69,6 +69,7 @@ The following is a list of all the tags:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # Mechanism
+Ok. I swear I'll update this before 2021/May/23 (if not I'll update this date)
 
 # Project Tree
 See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/master/CONTRIBUTING.md) for our standard datapack structure and how this structure works.
@@ -102,14 +103,10 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 				load.json
 				tick.json
 
-
-# Incompactibility
-
-
 # Terms of Use
 Feel free to play around with this datapack. \
 As developer, deel free to use this datapack as a module to develop free datapacks. \
 But you **must** add the link to this github page! \
 **NO COMMERCIAL USE**
 ## License
-[Mozilla Public License 2.0](https://github.com/DaveHJT/Damage-Datapack-Minecraft-Squid-Workshop/blob/main/LICENSE)
+[Mozilla Public License 2.0](https://github.com/nzcsx/Bools-Minecraft-Squid-Workshop-Project/blob/main/LICENSE)
