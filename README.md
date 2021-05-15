@@ -1,13 +1,45 @@
 # _Squid Workshop's_ Bools Data Pack
+A minecraft datapack library for global boolean system, which translates player's in-game actions into the form of scoreboard tags.
 
-This folder is for global boolean variables. \
-These bools translate player's actions game data into the form of tags. \
-(Tagged == True, Untagged == False) \
-Therefore these tags are read-only and should NOT be modified by anything outside this pack.
+- [Abstract](#Abstract)
+- [Installation](#installation)
+- [Usage](#Usage)
+- [Mechanism](#Mechanism)
+- [Project Tree](#Project-Tree)
+- [Incompactibility](#Incompactibility)
+- [Terms of Use](#Terms-of-Use)
+- [More About Squid Workshop](#More-About-Squid-Workshop)
 
-There are two types of bools: _Level_ and _Edge_. \
-_Level_ bools == (keep true whenever) player is doing something\
-_Edge_ bools == (true for one tick if) player did something
+# Abstract
+Minecraft provides a lot of counters that count the player actions (the amount of jumps, meters traveled, etc) in scoreboard objectives or nbt tags. This data pack translates  those player actions into booleans. I chose to use scoreboard tags because they have only two states (Tagged == True, Untagged == False). These tags are read-only and should NOT be modified manually in-game.
+
+# Installation
+- Step 1 Download this repository as a zip and unpack.
+- Step 2 Go to minecraft saves directory, usually "C:/Users/youUserName/AppData/Roaming/.minecraft/saves".
+- Step 3 Choose the world folder in which you want to install the packs.
+- Step 4 Go to .../world/datapacks folder.
+- Step 5 Move your "Damage-Datapack-Squid-Workshop-1.16.5" folder(not the root folder) into .../world/datapacks folder.
+- Step 6 Open Minecraft and open the world.
+- Step 7 Type "/reload" command then press enter.
+- Step 8 Enjoy
+
+PS: If not working, check whether the datapack is enabled by:
+
+	/datapack list
+Enable it by:
+
+	/datapack enable "datapackname"
+  
+# Usage
+You can use the selector or if-statement in command to check if players have the tags.
+e.g.
+
+    /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
+This command gives an apple to all the players that jumped.
+
+These tags check two types of actions: _Level_ and _Edge_. \
+_Level_ action tags == (keep tagged whenever) player is doing something\
+_Edge_ action tags == (tag for one tick if) player did something\
 
 The following is a list of all the tags:
 | Name | Type | Meaning |
@@ -35,3 +67,5 @@ The following is a list of all the tags:
 | fungiClik      | edge  | right clicked using fungus stick
 | fishrClik      | edge  | right clicked using fish rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
+
+# Mechanism
