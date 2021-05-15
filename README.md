@@ -32,12 +32,12 @@ Enable it by:
   
 # Usage
 You can use the selector or if-statement in command to check if players have the tags.
-For example:
+e.g.
 
     /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
-This command gives an apple to the all the players that jumped.
+This command gives an apple to all the players that jumped.
 
-These tags checks two types of actions: _Level_ and _Edge_. \
+These tags check two types of actions: _Level_ and _Edge_. \
 _Level_ action tags == (keep tagged whenever) player is doing something\
 _Edge_ action tags == (tag for one tick if) player did something\
 
@@ -67,3 +67,5 @@ The following is a list of all the tags:
 | fungiClik      | edge  | right clicked using fungus stick
 | fishrClik      | edge  | right clicked using fish rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
+
+# How it works
