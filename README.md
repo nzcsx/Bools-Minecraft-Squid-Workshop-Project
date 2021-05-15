@@ -38,9 +38,8 @@ For example:
 This command gives an apple to the all the players that jumped.
 
 These tags checks two types of actions: _Level_ and _Edge_. \
-_Level_ actions == player is doing something\
-Tags that checks _Level_ actions: (keep true whenever) player is doing something\
-_Edge_ bools == (true for one tick if) player did something
+_Level_ action tags == (keep tagged whenever) player is doing something\
+_Edge_ action tags == (tag for one tick if) player did something\
 
 The following is a list of all the tags:
 | Name | Type | Meaning |
