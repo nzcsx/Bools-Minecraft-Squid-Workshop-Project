@@ -45,3 +45,7 @@ scoreboard players set @a contnr_helper10 0
 # Create bools_timer variables
 scoreboard objectives add bools_timer dummy
 scoreboard players set bools_timer bools_timer 1
+
+########################################
+# Loading message
+tellraw @a {"text":"[Server]: Bools-Datapack from Squid-Workshop Loaded","italic":true,"color":"gray"}
