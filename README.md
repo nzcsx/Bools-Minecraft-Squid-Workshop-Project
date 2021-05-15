@@ -4,7 +4,7 @@ A minecraft datapack library for global boolean system, which translates player'
 - [Abstract](#Abstract)
 - [Installation](#installation)
 - [Usage](#Usage)
-- [How it works](#How-it-works)
+- [Mechanism](#Mechanism)
 - [Project Tree](#Project-Tree)
 - [Incompactibility](#Incompactibility)
 - [Terms of Use](#Terms-of-Use)
@@ -68,4 +68,4 @@ The following is a list of all the tags:
 | fishrClik      | edge  | right clicked using fish rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
-# How it works
+# Mechanism
