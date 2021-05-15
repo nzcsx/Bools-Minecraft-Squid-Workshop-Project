@@ -110,3 +110,10 @@ But you **must** add the link to this github page! \
 **NO COMMERCIAL USE**
 ## License
 [Mozilla Public License 2.0](https://github.com/nzcsx/Bools-Minecraft-Squid-Workshop-Project/blob/main/LICENSE)
+
+
+# More About Squid Workshop
+See more datapacks developed by us [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject) \
+Watch our videos on bilibili [here](https://space.bilibili.com/649645265?from=search&seid=778816111336987286) \
+Join our QQ group: 74681732 \
+Subscribe on wechat: 鱿鱼MC工作室 
