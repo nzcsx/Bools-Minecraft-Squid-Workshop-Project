@@ -30,7 +30,7 @@ Enable it by:
 	/datapack enable "datapackname"
   
 # Usage
-You can use the selector or if-statement in command to check if players have the tags.
+You can use the selector or if-statement in command to check if players have the tags. \
 e.g.
 
     /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
