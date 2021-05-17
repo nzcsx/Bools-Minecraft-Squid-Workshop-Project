@@ -31,8 +31,7 @@ Enable it by:
   
 # Usage
 You can use the selector or if-statement in command to check if players have the tags. \
-e.g.
-
+e.g.\
     /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
 This command gives an apple to all the players that jumped.
 
