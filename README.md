@@ -62,9 +62,9 @@ The following is a list of all the tags:
 | pearl_bool     | edge  | used ender pearl
 | offGrnd_begin  | edge  | lifted offground
 | offGrnd_end    | edge  | landed
-| carotClik      | edge  | right clicked using carrot stick
-| fungiClik      | edge  | right clicked using fungus stick
-| fishrClik      | edge  | right clicked using fish rod
+| carotClik_bool | edge  | right clicked using carrot stick
+| fungiClik_bool | edge  | right clicked using fungus stick
+| fishrClik_bool | edge  | right clicked using fish rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # Mechanism
