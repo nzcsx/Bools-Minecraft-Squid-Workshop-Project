@@ -70,6 +70,7 @@ execute if entity @s[scores={contnr_helper06=1..}] run scoreboard players set @s
 execute if entity @s[scores={contnr_helper07=1..}] run scoreboard players set @s contnr_helper07 0
 execute if entity @s[scores={contnr_helper08=1..}] run scoreboard players set @s contnr_helper08 0
 execute if entity @s[scores={contnr_helper09=1..}] run scoreboard players set @s contnr_helper09 0
+execute if entity @s[scores={contnr_helper10=1..}] run scoreboard players set @s contnr_helper10 0
 
 
 
