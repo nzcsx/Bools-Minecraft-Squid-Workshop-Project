@@ -30,13 +30,13 @@ Enable it by:
 	/datapack enable "datapackname"
   
 # Usage
-You can use the selector or if-statement in command to check if players have the tags.
+You can use the selector or if-statement in command to check if players have the tags. \
 e.g.
 
     /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
 This command gives an apple to all the players that jumped.
 
-These tags check two types of actions: _Level_ and _Edge_. \
+These boolean tags check two types of actions: _Level_ and _Edge_. \
 _Level_ action tags == (keep tagged whenever) player is doing something\
 _Edge_ action tags == (tag for one tick if) player did something\
 
@@ -62,9 +62,9 @@ The following is a list of all the tags:
 | pearl_bool     | edge  | used ender pearl
 | offGrnd_begin  | edge  | lifted offground
 | offGrnd_end    | edge  | landed
-| carotClik      | edge  | right clicked using carrot stick
-| fungiClik      | edge  | right clicked using fungus stick
-| fishrClik      | edge  | right clicked using fish rod
+| carotClik_bool | edge  | right clicked using carrot stick
+| fungiClik_bool | edge  | right clicked using fungus stick
+| fishrClik_bool | edge  | right clicked using fish rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # Mechanism
