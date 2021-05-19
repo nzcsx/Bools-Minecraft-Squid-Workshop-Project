@@ -103,6 +103,24 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 				tick.json
 
 # Call Tree
+	  /minecraft/tags/functions/tick.json
+	    │  
+	    └─/bools/functions/classes/main/tick.mcfunction
+		│
+		├─/bools/functions/classes/bools/check_every_tick.mcfunction
+		└─/bools/functions/classes/bools/check_three_ticks.mcfunction
+		
+	  /minecraft/tags/functions/load.json
+	    │  
+	    └─/bools/functions/classes/main/load.mcfunction
+		│
+		└─bools/functions/classes/main/clean.mcfunction
+
+	  /app/functions/unload/bools.mcfunction
+	    │  
+	    └─/bools/functions/classes/main/clean.mcfunction
+	    
+	  /app/functions/help/bools.mcfunction
 
 
 # Terms of Use
