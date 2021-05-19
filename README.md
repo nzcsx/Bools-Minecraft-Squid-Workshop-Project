@@ -80,8 +80,8 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 	    └─data
 		├─app
 		│  └─functions
-		│      │  help.mcfunction
-		│      │  
+		│      ├─help
+		│      │       bools.mcfunction
 		│      └─unload
 		│              bools.mcfunction
 		│              
