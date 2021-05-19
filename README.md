@@ -114,7 +114,7 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 	    │  
 	    └─/bools/functions/classes/main/load.mcfunction
 		│
-		└─bools/functions/classes/main/clean.mcfunction
+		└─/bools/functions/classes/main/clean.mcfunction
 
 	  /app/functions/unload/bools.mcfunction
 	    │  
