@@ -37,8 +37,6 @@ E.g.
     /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
 This command gives an apple to players that jumped.
 
-E.g.
-
     /execute as @a[tags=sleep_begin] run effect give @s minecraft:regeneration 1 1 true
 This command gives 1 second regeneration effect to players that start sleeping.
 
