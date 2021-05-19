@@ -64,7 +64,7 @@ The following is a list of all the tags:
 | offGrnd_end    | edge  | landed
 | carotClik_bool | edge  | right clicked using carrot stick
 | fungiClik_bool | edge  | right clicked using fungus stick
-| fishrClik_bool | edge  | right clicked using fish rod
+| fishrClik_bool | edge  | right clicked using fishing rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # Mechanism
