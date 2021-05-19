@@ -32,10 +32,11 @@ Enable it by:
 # Usage
 You can use the selector or if-statement in command to check if players have the tags.
 
-E.g. This command gives an apple to players that jumped:
+E.g. \
+This command gives an apple to players that jumped:
 
     /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
-E.g. This command gives 1 second regeneration effect to players that start sleeping:
+This command gives 1 second regeneration effect to players that start sleeping:
 
     /execute as @a[tags=sleep_begin] run effect give @s minecraft:regeneration 1 1 true
 
