@@ -35,10 +35,10 @@ You can use the selector or if-statement in command to check if players have the
 E.g. \
 This command gives an apple to players that jumped:
 
-    /execute as @a[tags=jump_bool] run give @s minecraft:apple 1
+    /execute as @a[tag=jump_bool] run give @s minecraft:apple 1
 This command gives 1 second regeneration effect to players that start sleeping:
 
-    /execute as @a[tags=sleep_begin] run effect give @s minecraft:regeneration 1 1 true
+    /execute as @a[tag=sleep_begin] run effect give @s minecraft:regeneration 1 1 true
 
 These boolean tags check two types of actions: _Level_ and _Edge_. \
 _Level_ action tags == (keep tagged whenever) player is doing something\
