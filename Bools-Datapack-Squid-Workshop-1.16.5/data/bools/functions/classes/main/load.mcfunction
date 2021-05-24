@@ -42,6 +42,35 @@ scoreboard players set @a contnr_helper09 0
 scoreboard players set @a contnr_helper10 0
 
 ########################################
+# Create all the bools
+scoreboard objectives add walk_bool dummy
+scoreboard objectives add walk_begin dummy
+scoreboard objectives add walk_end dummy
+scoreboard objectives add shift_bool dummy
+scoreboard objectives add shift_begin dummy
+scoreboard objectives add shift_end dummy
+scoreboard objectives add sprint_bool dummy
+scoreboard objectives add sprint_begin dummy
+scoreboard objectives add sprint_end dummy
+scoreboard objectives add sleep_bool dummy
+scoreboard objectives add sleep_begin dummy
+scoreboard objectives add sleep_end dummy
+scoreboard objectives add jump_bool dummy
+scoreboard objectives add offGrnd_begin dummy
+scoreboard objectives add offGrnd_end dummy
+
+scoreboard objectives add carotClik_bool dummy
+scoreboard objectives add fungiClik_bool dummy
+scoreboard objectives add fishrClik_bool dummy
+scoreboard objectives add bow_bool dummy
+scoreboard objectives add crossbow_bool dummy
+scoreboard objectives add shield_bool
+scoreboard objectives add pearl_bool dummy
+
+scoreboard objectives add container_bool dummy
+
+
+########################################
 # Create bools_timer variables
 scoreboard objectives add bools_timer dummy
 scoreboard players set bools_timer bools_timer 1

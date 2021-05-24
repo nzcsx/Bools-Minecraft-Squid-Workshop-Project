@@ -28,32 +28,32 @@ scoreboard objectives remove contnr_helper10
 
 
 ########################################
-# Remove all the tags
-tag @a remove walk_bool
-tag @a remove walk_begin
-tag @a remove walk_end
-tag @a remove shift_bool
-tag @a remove shift_begin
-tag @a remove shift_end
-tag @a remove sprint_bool
-tag @a remove sprint_begin
-tag @a remove sprint_end
-tag @a remove sleep_bool
-tag @a remove sleep_begin
-tag @a remove sleep_end
-tag @a remove jump_bool
-tag @a remove offGrnd_begin
-tag @a remove offGrnd_end
+# Remove all the bools
+scoreboard objectives remove walk_bool
+scoreboard objectives remove walk_begin
+scoreboard objectives remove walk_end
+scoreboard objectives remove shift_bool
+scoreboard objectives remove shift_begin
+scoreboard objectives remove shift_end
+scoreboard objectives remove sprint_bool
+scoreboard objectives remove sprint_begin
+scoreboard objectives remove sprint_end
+scoreboard objectives remove sleep_bool
+scoreboard objectives remove sleep_begin
+scoreboard objectives remove sleep_end
+scoreboard objectives remove jump_bool
+scoreboard objectives remove offGrnd_begin
+scoreboard objectives remove offGrnd_end
 
-tag @a remove carotClik_bool
-tag @a remove fungiClik_bool
-tag @a remove fishrClik_bool
-tag @a remove bow_bool
-tag @a remove crossbow_bool
-tag @a remove shield_bool
-tag @a remove pearl_bool
+scoreboard objectives remove carotClik_bool
+scoreboard objectives remove fungiClik_bool
+scoreboard objectives remove fishrClik_bool
+scoreboard objectives remove bow_bool
+scoreboard objectives remove crossbow_bool
+scoreboard objectives remove shield_bool
+scoreboard objectives remove pearl_bool
 
-tag @a remove container_bool
+scoreboard objectives remove container_bool
 
 
 ########################################
