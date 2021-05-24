@@ -2,9 +2,9 @@
 A minecraft datapack library for global boolean system, which translates player's in-game actions into the form of scoreboard tags.
 
 - [Abstract](#Abstract)
-- [Installation](#installation)
+- [Installation](#Installation)
 - [Usage](#Usage)
-- [Mechanism](#Mechanism)
+- [How It Works](#How-It-Works)
 - [Project Tree](#Project-Tree)
 - [Terms of Use](#Terms-of-Use)
 - [More About Squid Workshop](#More-About-Squid-Workshop)
@@ -71,8 +71,9 @@ The following is a list of all the scores:
 | fishrClik_bool | edge  | right clicked using fishing rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
-# Mechanism
-Ok. I swear I'll update this before 2021/May/30 (if not I'll update this date)
+# How It Works
+The key idea is simple: since the game counts the data, we simply set bool to 1 and reset the helper to 0.
+Ok. I swear I'll finish this before 2021/May/30 (if not I'll update this date)
 
 # Project Tree
 See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/master/CONTRIBUTING.md) for our standard datapack structure and how this structure works.
