@@ -40,9 +40,9 @@ This command gives 1 second regeneration effect to players that start sleeping:
 
     /execute as @a[score={sleep_begin=1}] run effect give @s minecraft:regeneration 1 1 true
 
-These boolean tags check two types of actions: _Level_ and _Edge_. \
-_Level_ action tags == (keep tagged whenever) player is doing something\
-_Edge_ action tags == (tag for one tick if) player did something
+These boolean scores check two types of actions: _Level_ and _Edge_. \
+_Level_ action scores == (keep tagged whenever) player is doing something\
+_Edge_ action scores == (tag for one tick if) player did something
 
 The following is a list of all the scores:
 | Name | Type | Meaning |
