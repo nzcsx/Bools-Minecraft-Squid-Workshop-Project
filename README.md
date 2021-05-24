@@ -10,7 +10,7 @@ A minecraft datapack library for global boolean system, which translates player'
 - [More About Squid Workshop](#More-About-Squid-Workshop)
 
 # Abstract
-Minecraft provides a lot of counters that count the player actions (the amount of jumps, meters traveled, etc) in scoreboard objectives or nbt tags. This data pack translates  those player actions into booleans. I chose to use scoreboard tags because they have only two states (Tagged == True, Untagged == False). These tags are read-only and should NOT be modified manually in-game.
+Minecraft provides a lot of counters that count the player actions (the amount of jumps, meters traveled, etc) in scoreboard objectives or nbt tags. This data pack translates  those player actions into booleans. I chose to use scoreboard objectives to represent the booleans ({score=1} == True, {score=0} == False). These objective scores are read-only and should NOT be modified manually in-game.
 
 # Installation
 - Step 1 Download this repository as a zip and unpack.
@@ -35,16 +35,16 @@ You can use the selector or if-statement in command to check if players have the
 E.g. \
 This command gives an apple to players that jumped:
 
-    /execute as @a[tag=jump_bool] run give @s minecraft:apple 1
+    /execute as @a[score={jump_bool=1}] run give @s minecraft:apple 1
 This command gives 1 second regeneration effect to players that start sleeping:
 
-    /execute as @a[tag=sleep_begin] run effect give @s minecraft:regeneration 1 1 true
+    /execute as @a[score={sleep_begin=1}] run effect give @s minecraft:regeneration 1 1 true
 
 These boolean tags check two types of actions: _Level_ and _Edge_. \
 _Level_ action tags == (keep tagged whenever) player is doing something\
 _Edge_ action tags == (tag for one tick if) player did something
 
-The following is a list of all the tags:
+The following is a list of all the scores:
 | Name | Type | Meaning |
 | --- | :------ | :------ |
 | walk_bool      | level | is     walking
