@@ -89,7 +89,19 @@ Correct:
 Incorrect: 
 	
 	Total_distance_travelled will keep increasing every tick as the player keeps walking.
-     
+
+The problem is when a player keeps walking, the total_distance_travelled does NOT increase EVERY tick. In some ticks, the value stays unchanged. There might be a potential explanation for such behaviour but currently it happens seemingly randomly. The way I solved it is rather simple. Although I cannot eliminate such behavior, I minimized its effect by checking the helper once every 3 ticks instead of every tick. Therefore the logic becomes:
+
+	Loop per tick:
+	    # Game updates helper #
+	    timer switches among 1, 2, 3
+	    if ( timer == 1 )
+	        if ( helper > 0 )
+	            bool = 1
+		    helper = 0
+	        else
+	            bool = 0
+
 Ok. I swear I'll finish this before 2021/May/30 (if not I'll update this date)
 
 # Project Tree
