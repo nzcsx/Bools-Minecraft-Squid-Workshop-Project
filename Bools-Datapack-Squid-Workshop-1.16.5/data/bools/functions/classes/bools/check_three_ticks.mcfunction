@@ -1,7 +1,7 @@
 ########################################
 # walk_begin tags when player starts walking
 # walk_end   tags when player stops
-# the untagging part is in check_every_tick
+# the set 0 part is in check_every_tick
 # before the execution of following commands, the game will update walk_helper first 
 execute if entity @s[scores={walk_helper=1..,walk_bool=0}] run scoreboard players set @s walk_begin 1
 execute if entity @s[scores={walk_helper=  0,walk_bool=1}] run scoreboard players set @s walk_end 1
@@ -16,7 +16,7 @@ execute if entity @s[scores={walk_helper=1..}] run scoreboard players set @s wal
 ########################################
 # shift_begin tags when player starts pressing shift
 # shift_end   tags when player stops
-# the untagging part is in check_every_tick
+# the set 0 part is in check_every_tick
 # before the execution of following commands, the game will update shift_helper first 
 execute if entity @s[scores={shift_helper=1..,shift_bool=0}] run scoreboard players set @s shift_begin 1
 execute if entity @s[scores={shift_helper=  0,shift_bool=1}] run scoreboard players set @s shift_end 1
@@ -31,7 +31,7 @@ execute if entity @s[scores={shift_helper=1..}] run scoreboard players set @s sh
 ########################################
 # sprint_begin tags when player starts sprinting
 # sprint_end   tags when player stops
-# the untagging part is in check_every_tick
+# the set 0 part is in check_every_tick
 # before the execution of following commands, the game will update sprint_helper first 
 execute if entity @s[scores={sprint_helper=1..,sprint_bool=0}] run scoreboard players set @s sprint_begin 1
 execute if entity @s[scores={sprint_helper=  0,sprint_bool=1}] run scoreboard players set @s sprint_end 1
