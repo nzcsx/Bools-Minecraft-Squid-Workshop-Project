@@ -10,7 +10,7 @@ A minecraft datapack library for global boolean system, which translates player'
 - [More About Squid Workshop](#More-About-Squid-Workshop)
 
 # Abstract
-Minecraft provides a lot of counters that count the player actions (the amount of jumps, meters traveled, etc) in scoreboard objectives or nbt tags. This data pack translates  those player actions into booleans. I chose to use scoreboard objectives to represent the booleans ({score=1} == True, {score=0} == False). These objective scores are read-only and should NOT be modified manually in-game.
+This data pack translates player actions into booleans. I chose to use scoreboard objectives to represent the booleans ({score=1} == True, {score=0} == False). These objective scores are read-only and should NOT be modified manually in-game.
 
 # Installation
 - Step 1 Download this repository as a zip and unpack.
@@ -71,7 +71,25 @@ The following is a list of all the scores:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
-The key idea is simple: since the game counts the data, we simply set bool to 1 and reset the helper to 0.
+Minecraft provides a lot of scoreboard objectives that count the player actions (the amount of jumps, meters traveled, etc). I use a set of objective scores as helper variable to record those counted values and another set of objective scores to record the boolean output. The logic is shown below:
+	
+	Loop per tick:
+	    # Game updates helper #
+	    if ( helper > 0 )
+	        bool = 1
+		helper = 0
+	    else
+	        bool = 0
+However there is some slight issue: in the above the logic, we assume the game will always increment the helper as the player performs some actions. While this is correct most of the time, it can be wrong in some continuous motions. 
+
+For example:\
+Correct:  
+
+	Total_amount_of_jumps increases at the tick the player jumps. 
+Incorrect: 
+	
+	Total_distance_travelled will keep increasing every tick as the player keeps walking.
+     
 Ok. I swear I'll finish this before 2021/May/30 (if not I'll update this date)
 
 # Project Tree
