@@ -71,7 +71,7 @@ The following is a list of all the scores:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
-Minecraft provides a lot of scores that count the player actions (the amount of jumps, meters traveled, etc) automatically. I use a set of **helper** scores to count those values. I use another set of **bool** scores to record the boolean output. The logic is shown below:
+Minecraft provides a lot of scores that count the player actions (the amount of jumps, meters traveled, etc) automatically. I use a set of `helper` scores to count those values. I use another set of `bool` scores to record the boolean output. The logic is shown below:
 	
 	Loop per tick:
 	    # Game updates helper #
@@ -80,13 +80,14 @@ Minecraft provides a lot of scores that count the player actions (the amount of 
 		helper = 0
 	    else
 	        bool = 0
-However there is some slight issue: in the above the logic, we assume the game will always increment the **helper** as the player performs some actions. While this is correct most of the time, it can be wrong in some continuous motions. 
+However there is some slight issue: in the above the logic, we assume the game will always increment the `helper` as the player performs some actions. While this is correct most of the time, it can be wrong in some continuous motions. 
 
 - Correct:  
-	`<addr>` Total_amount_of_jumps increases at the tick the player jumps. 
+
+      Total_amount_of_jumps increases at the tick the player jumps. 
 - Incorrect: 
 	
-	Total_distance_travelled will keep increasing every tick as the player keeps walking.
+      Total_distance_travelled will keep increasing every tick as the player keeps walking.
 
 The problem is when a player keeps walking, the total_distance_travelled does NOT increase EVERY tick. In some ticks, the value stays unchanged. There might be a potential explanation for such behaviour but currently it happens seemingly randomly. The way I solved it is rather simple. Although I cannot eliminate such behavior, I minimized its effect by checking the helper once every 3 ticks instead of every tick. Therefore the logic becomes:
 
