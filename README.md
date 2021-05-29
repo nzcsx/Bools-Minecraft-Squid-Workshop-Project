@@ -80,12 +80,11 @@ Minecraft provides a lot of scores that count the player actions (the amount of 
 		helper = 0
 	    else
 	        bool = 0
-However there is some slight issue: in the above the logic, we assume the game will always increment the helper as the player performs some actions. While this is correct most of the time, it can be wrong in some continuous motions. 
+However there is some slight issue: in the above the logic, we assume the game will always increment the **helper** as the player performs some actions. While this is correct most of the time, it can be wrong in some continuous motions. 
 
-For example:\
-Correct:  
-> Total_amount_of_jumps increases at the tick the player jumps. 
-Incorrect: 
+- Correct:  
+	`<addr>` Total_amount_of_jumps increases at the tick the player jumps. 
+- Incorrect: 
 	
 	Total_distance_travelled will keep increasing every tick as the player keeps walking.
 
