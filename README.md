@@ -71,7 +71,10 @@ The following is a list of all the scores:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
-Minecraft provides a lot of scores that count the player actions (the amount of jumps, meters traveled, etc) automatically. I use a set of `helper` scores to count those values. I use another set of `bool` scores to record the boolean output. The logic is shown below:
+Minecraft provides a lot of scores that count the player actions (the amount of jumps, meters traveled, etc) automatically. \
+I use a set of `helper` scores to count those values. \
+I use a set of `bool` scores to record the boolean output. \
+The logic is shown below:
 	
 	Loop per tick:
 	    # Game updates helper #
