@@ -75,14 +75,15 @@ Minecraft provides a lot of scores that count the player actions (the amount of 
 I use a set of `helper` scores to count those values. \
 I use a set of `bool` scores to record the boolean output. \
 The logic is shown below:
-	
-	Loop per tick:
-	    # Game updates helper #
-	    if ( helper > 0 )
-	        bool = 1
-		helper = 0
-	    else
-	        bool = 0
+```
+Loop per tick:
+    # Game updates helper #
+    if ( helper > 0 )
+        bool = 1
+	helper = 0
+    else
+        bool = 0
+```
 However there is some slight issue: in the above the logic, we assume the game will always increment the `helper` as the player performs some actions. While this is correct most of the time, it can be wrong in some continuous motions. 
 
 - Correct:  
