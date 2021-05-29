@@ -71,25 +71,23 @@ The following is a list of all the scores:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
-Minecraft provides a lot of scores that count the player actions (the amount of jumps, meters traveled, etc) automatically. \
+Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, meters traveled, etc). In another word, the game increments these scores automatically every time the player performs some action. \
 I use a set of `helper` scores to count those values. \
 I use a set of `bool` scores to record the boolean output. \
 The logic is shown below:
-```
-Loop per tick:
-    # Game updates helper #
-    if ( helper > 0 )
-        bool = 1
-	helper = 0
-    else
-        bool = 0
-```
-However there is some slight issue: in the above the logic, we assume the game will always increment the `helper` as the player performs some actions. While this is correct most of the time, it can be wrong in some continuous motions. 
 
-- Correct:  
+	Loop per tick:
+	    # Game updates helper #
+ 	   if ( helper > 0 )
+ 	       bool = 1
+		helper = 0
+	    else
+	        bool = 0
+However there is some slight issue because we actually cannot assume the game always increments the `helper` as the player performs some actions.
+- Correct statement:  
 
       Total_amount_of_jumps increases at the tick the player jumps. 
-- Incorrect: 
+- Incorrect statement: 
 	
       Total_distance_travelled will keep increasing every tick as the player keeps walking.
 
