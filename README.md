@@ -71,7 +71,7 @@ The following is a list of all the scores:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
-Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, centimeters walked, etc). In another word, the game increments these scores automatically every time the player performs some action. \
+Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, centimeters walked, etc). In another word, the game increments these scores automatically every time the player performs some actions. \
 I use a set of `helper` scores to count those values. \
 I use a set of `bool` scores to record the boolean output. \
 Every time the `helper` increases above 0, I set `bool` to 1 and reset `helper` to 0. \
@@ -84,7 +84,7 @@ The logic is shown below:
 	        helper = 0
 	    else
 	        bool = 0
-However there is some slight issue because we actually cannot assume that the game always increments the `helper` as the player performs some continuous actions.
+However there is some slight issue because it's actually wrong assume that the game increments the `helper` EVERY tick as the player performs some continuous actions.
 - Correct statement:  
 
       Total_amount_of_jumps increases at the tick the player jumps. 
@@ -92,7 +92,7 @@ However there is some slight issue because we actually cannot assume that the ga
 	
       Total_cm_walked will keep increasing every tick as the player keeps walking.
 
-The problem is when a player is quickly turning or stops walking, there is a slowing down period. During such period, the total_cm_walked stays unchanged for 3 ticks, then increases for 1 tick. 
+When a player is quickly turning or stops walking, there is a slowing down period. During such period, the total_cm_walked follows the pattern: unchanged for 3 ticks, increased for 1 tick. 
 
 The way I solved it is rather simple. I check the helper once every 3 ticks instead of every tick. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore the logic becomes:
 
