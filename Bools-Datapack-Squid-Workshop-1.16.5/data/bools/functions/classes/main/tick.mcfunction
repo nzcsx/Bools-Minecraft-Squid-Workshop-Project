@@ -4,8 +4,8 @@
 # continuous updates once per three ticks
 # discrete should be strictly before continuous
 #  (because for some tags they follow the sequence: untagging in check_every_tick, tagging back in check_three_ticks)
-execute if score bools_timer bools_timer matches ..4 as @a run function bools:classes/bools/check_every_tick
-execute if score bools_timer bools_timer matches 1 as @a run function bools:classes/bools/check_three_ticks
+execute if score bools_timer bools_timer matches ..4 as @a run function bools:classes/core/check_every_tick
+execute if score bools_timer bools_timer matches 1 as @a run function bools:classes/core/check_three_ticks
 
 ########################################
 # Timer ++
