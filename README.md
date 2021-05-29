@@ -71,7 +71,7 @@ The following is a list of all the scores:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
-Minecraft provides a lot of scoreboard objectives that count the player actions (the amount of jumps, meters traveled, etc). I use a set of objective scores as helper variable to record those counted values and another set of objective scores to record the boolean output. The logic is shown below:
+Minecraft provides a lot of scores that count the player actions (the amount of jumps, meters traveled, etc) automatically. I use a set of **helper** scores to count those values. I use another set of **bool** scores to record the boolean output. The logic is shown below:
 	
 	Loop per tick:
 	    # Game updates helper #
@@ -84,8 +84,7 @@ However there is some slight issue: in the above the logic, we assume the game w
 
 For example:\
 Correct:  
-
-	Total_amount_of_jumps increases at the tick the player jumps. 
+> Total_amount_of_jumps increases at the tick the player jumps. 
 Incorrect: 
 	
 	Total_distance_travelled will keep increasing every tick as the player keeps walking.
@@ -126,7 +125,7 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 		│          │       clean.mcfunction
 		│          │       load.mcfunction
 		│          │       tick.mcfunction
-		│          └─bools
+		│          └─core
 		│                  check_every_tick.mcfunction
 		│                  check_three_ticks.mcfunction
 		│                  
@@ -141,8 +140,8 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 	    │  
 	    └─/bools/functions/classes/main/tick.mcfunction
 		│
-		├─/bools/functions/classes/bools/check_every_tick.mcfunction
-		└─/bools/functions/classes/bools/check_three_ticks.mcfunction
+		├─/bools/functions/classes/core/check_every_tick.mcfunction
+		└─/bools/functions/classes/core/check_three_ticks.mcfunction
 		
 	  /minecraft/tags/functions/load.json
 	    │  
