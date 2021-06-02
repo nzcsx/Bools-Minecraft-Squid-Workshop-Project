@@ -91,9 +91,9 @@ The logic is shown below:
 ## Type 2
 Type 2 includes: `sleep_begin, sleep_end, offGrnd_begin, offGrnd_end`
 
-Begin and end scores record the beginning tick and end tick of actions. Since both begin and end are edge bools, we first reset them to 0. Then we check how to set begin and end. \
-If bool is 1 and helper > 0, meaning the player is not doing something in the previous tick but is doing it in the current tick, we set begin to 1. \
-If bool is 0 and helper = 0, meaning the player is doing something in the previous tick but is not doing it in the current tick, we set end to 1. \
+`Begin` and `end` scores record the beginning tick and end tick of actions. Since both `begin` and `end` are edge bools, we first reset them to 0. Then we check how to set `begin` and `end`. \
+If `bool` is 1 and `helper` > 0, meaning the player is not doing something in the previous tick but is doing it in the current tick, we set `begin` to 1. \
+If `bool` is 0 and `helper` = 0, meaning the player is doing something in the previous tick but is not doing it in the current tick, we set `end` to 1. \
 The logic is shown below:
 
 	Loop per tick:
@@ -129,28 +129,28 @@ However there is some slight issue because it's actually wrong to assume that th
 
 When a player is quickly turning or stops walking, there is a slowing down period. During such period, the total_cm_walked follows the pattern: unchanged for 3 ticks, increased for 1 tick. 
 
-The way I solved it is rather simple. I check the helper once every 3 ticks instead of every tick. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore for those bools, the logic becomes:
+The way I solved it is rather simple. I check if to update `bool` to 1 or 0 once every 3 ticks instead of every tick. I also check if to update `begin`, `end` to 1 once every 3 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore for those bools, the logic becomes:
 
 	Loop per tick:
 	    # Game updates helper #
 	    timer switches among 1, 2, 3
 	    
-	    if ( timer == 1 )
-	        if ( begin = 1 )
-	            begin = 0
-	        if ( end = 1 )
-	            end = 0
-		    
-	    if ( helper > 0 && bool = 0 )
-	    	begin = 1
-	    if ( helper = 0 && bool = 1 )
-	    	end = 1
+	    if ( begin = 1 )
+	        begin = 0
+	    if ( end = 1 )
+	        end = 0
+	    
+	    if ( timer == 1 )    
+	    	if ( helper > 0 && bool = 0 )
+	    	    begin = 1
+	    	if ( helper = 0 && bool = 1 )
+	    	    end = 1
 		
- 	    if ( helper > 0 )
- 	        bool = 1
-	        helper = 0
-	    else
-	        bool = 0
+ 	    	if ( helper > 0 )
+ 	            bool = 1
+	            helper = 0
+	    	else
+	            bool = 0
 
 Ok. I swear I'll finish this before 2021/May/30 (if not I'll update this date)
 
