@@ -161,7 +161,7 @@ The rest includes: `shield_bool, container_bool`
 
 `shield_bool` simply checks players' nbt tag to see if they are holding shields. It does not use scoreboard system at all.
 
-`container_bool` is similar to Type 1 scores. However, because there are multiple containers to consider, there are multiple `helpers`.
+`container_bool` is similar to Type 1 scores. However, because there are multiple containers to consider, there are multiple `helpers`. \
 `helper00` := barrel \
 `helper01` := chest \
 `helper02` := enderchest \
