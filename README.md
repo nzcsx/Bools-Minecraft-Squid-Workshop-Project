@@ -40,8 +40,8 @@ You can use the selector or if-statement in command to check if players have the
 	  /execute as @a[scores={sleep_begin=1}] run effect give @s minecraft:regeneration 1 1 true
 
 These boolean scores check two types of actions: _Level_ and _Edge_. \
-_Level_ action scores == (keep tagged whenever) player is doing something\
-_Edge_ action scores == (tag for one tick if) player did something
+_Level_ action scores := (keep tagged whenever) player is doing something\
+_Edge_ action scores := (tag for one tick if) player did something
 
 The following is a list of all the scores:
 | Name | Type | Meaning |
@@ -84,9 +84,10 @@ The logic is shown below:
 	    # Game updates helper #
  	    if ( helper > 0 )
  	        bool = 1
-	        helper = 0
 	    else
 	        bool = 0
+ 	    if ( helper > 0 )
+		helper = 0
 
 ## Type 2
 Type 2 includes: `sleep_begin, sleep_end, offGrnd_begin, offGrnd_end`
@@ -111,9 +112,10 @@ The logic is shown below:
 		
  	    if ( helper > 0 )
  	        bool = 1
-	        helper = 0
 	    else
 	        bool = 0
+ 	    if ( helper > 0 )
+		helper = 0
 
 
 ## Type 3
@@ -146,17 +148,48 @@ The way I solved it is rather simple. I check if to update `bool` once every 3 t
 	    	if ( helper = 0 && bool = 1 )
 	    	    end = 1
 		
- 	    	if ( helper > 0 )
+ 	        if ( helper > 0 )
  	            bool = 1
-	            helper = 0
 	    	else
 	            bool = 0
+ 	    	if ( helper > 0 )
+		    helper = 0
 
 
 ## Others
 The rest includes: `shield_bool, container_bool`
 
-Ok. I swear I'll finish this before 2021/May/30 (if not I'll update this date)
+`shield_bool` simply checks players' nbt tag to see if they are holding shields. It does not use scoreboard system at all.
+
+`container_bool` is similar to Type 1 scores. However, because there are multiple containers to consider, there are multiple `helpers`.
+`helper00` := barrel \
+`helper01` := chest \
+`helper02` := enderchest \
+`helper03` := shulker_box \
+`helper04` := trapped_chest \
+`helper05` := blast_furnace \
+`helper06` := furnace \
+`helper07` := smoker \
+`helper08` := dispenser \
+`helper09` := dropper \
+`helper10` := hopper \
+The logic is shown below:
+
+	Loop per tick:
+	    # Game updates helper #
+	    
+	    if ( helper00 == 0 && ... && helper10 == 0 )
+	    	bool = 0
+	    else 
+	        bool = 1
+		
+	    for helper00 to helper10
+ 	    	if ( helper > 0 )
+	            helper = 0
+	    else
+	        bool = 0
+		
+Ok. I swear I'll finish this before 2021/June/6 (if not I'll update this date)
 
 # Project Tree
 See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/master/CONTRIBUTING.md) for our standard datapack structure and how this structure works.
