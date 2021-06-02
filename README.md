@@ -72,7 +72,7 @@ The following is a list of all the scores:
 
 # How It Works
 ## Type 1
-Type 1 includes: walk_bool, shift_bool, sprint_bool, sleep_bool, jump_bool, jump_bool, bow_bool, crossbow_bool, pearl_bool, carotClik_bool, fungiClik_bool, fishrClik_bool.
+Type 1 includes: `walk_bool, shift_bool, sprint_bool, sleep_bool, jump_bool, bow_bool, crossbow_bool, pearl_bool, carotClik_bool, fungiClik_bool, fishrClik_bool, sleep_bool`
 
 Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, centimeters walked, etc). In another word, the game increments these scores automatically every time the player performs some actions. \
 I use a set of `helper` scores to count those values. \
@@ -89,9 +89,34 @@ The logic is shown below:
 	        bool = 0
 
 ## Type 2
-Type 1 includes:
+Type 2 includes: `sleep_begin, sleep_end, offGrnd_begin, offGrnd_end`
 
-However there is some slight issue because it's actually wrong assume that the game increments the `helper` EVERY tick as the player performs some continuous actions.
+Begin and end scores record the beginning tick and end tick of actions. Since both begin and end are edge bools, we first reset them to 0. Then we check how to set begin and end. \
+If bool is 1 and helper > 0, meaning the player is not doing something in the previous tick but is doing it in the current tick, we set begin to 1. \
+If bool is 0 and helper = 0, meaning the player is doing something in the previous tick but is not doing it in the current tick, we set end to 1. \
+The logic is shown below:
+
+	Loop per tick:
+	    # Game updates helper #
+	    
+	    begin = 0
+	    end = 0
+	    if ( helper > 0 && bool = 0 )
+	    	begin = 1
+	    if ( helper = 0 && bool = 1 )
+	    	end = 1
+		
+ 	    if ( helper > 0 )
+ 	        bool = 1
+	        helper = 0
+	    else
+	        bool = 0
+
+
+## Type 3
+Type 3 includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
+
+However there is some slight issue because it's actually wrong to assume that the game increments the `helper` EVERY tick as the player performs some continuous actions.
 - Correct statement:  
 
       Total_amount_of_jumps increases at the tick the player jumps. 
