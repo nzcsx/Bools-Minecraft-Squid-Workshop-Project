@@ -87,6 +87,10 @@ The logic is shown below:
 	        helper = 0
 	    else
 	        bool = 0
+
+## Type 2
+Type 1 includes:
+
 However there is some slight issue because it's actually wrong assume that the game increments the `helper` EVERY tick as the player performs some continuous actions.
 - Correct statement:  
 
