@@ -17,7 +17,7 @@ This data pack translates player actions into booleans. I chose to use scoreboar
 - Step 2 Go to minecraft saves directory, usually "C:/Users/youUserName/AppData/Roaming/.minecraft/saves".
 - Step 3 Choose the world folder in which you want to install the packs.
 - Step 4 Go to .../world/datapacks folder.
-- Step 5 Move your "Damage-Datapack-Squid-Workshop-1.16.5" folder(not the root folder) into .../world/datapacks folder.
+- Step 5 Move your "Bools-Datapack-Squid-Workshop-1.16.5" folder(not the root folder) into .../world/datapacks folder.
 - Step 6 Open Minecraft and open the world.
 - Step 7 Type "/reload" command then press enter.
 - Step 8 Enjoy
@@ -91,7 +91,7 @@ The logic is shown below:
 ## Type 2
 Type 2 includes: `sleep_begin, sleep_end, offGrnd_begin, offGrnd_end`
 
-`Begin` and `end` scores record the beginning tick and end tick of actions. Since both `begin` and `end` are edge bools, we first reset them to 0. Then we check how to set `begin` and `end`. \
+`Begin` and `end` scores record the beginning tick and end tick of actions. Since both `begin` and `end` are edge scores, we first reset them to 0. Then we check how to set `begin` and `end`. \
 If `bool` is 1 and `helper` > 0, meaning the player is not doing something in the previous tick but is doing it in the current tick, we set `begin` to 1. \
 If `bool` is 0 and `helper` = 0, meaning the player is doing something in the previous tick but is not doing it in the current tick, we set `end` to 1. \
 The logic is shown below:
@@ -129,7 +129,7 @@ However there is some slight issue because it's actually wrong to assume that th
 
 When a player is quickly turning or stops walking, there is a slowing down period. During such period, the total_cm_walked follows the pattern: unchanged for 3 ticks, increased for 1 tick. 
 
-The way I solved it is rather simple. I check if to update `bool` to 1 or 0 once every 3 ticks instead of every tick. I also check if to update `begin`, `end` to 1 once every 3 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore for those bools, the logic becomes:
+The way I solved it is rather simple. I check if to update `bool` once every 3 ticks instead of every tick. I also check if to update `begin`, `end` to 1 once every 3 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore for those bools, the logic becomes:
 
 	Loop per tick:
 	    # Game updates helper #
@@ -151,6 +151,10 @@ The way I solved it is rather simple. I check if to update `bool` to 1 or 0 once
 	            helper = 0
 	    	else
 	            bool = 0
+
+
+## Others
+The rest includes: `shield_bool, container_bool`
 
 Ok. I swear I'll finish this before 2021/May/30 (if not I'll update this date)
 
