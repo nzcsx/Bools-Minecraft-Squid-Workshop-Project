@@ -40,8 +40,8 @@ You can use the selector or if-statement in command to check if players have the
 	  /execute as @a[scores={sleep_begin=1}] run effect give @s minecraft:regeneration 1 1 true
 
 These boolean scores check two types of actions: _Level_ and _Edge_. \
-_Level_ action scores := (keep tagged whenever) player is doing something\
-_Edge_ action scores := (tag for one tick if) player did something
+_Level_ action scores := (keep setting to 1 whenever) player is doing something\
+_Edge_ action scores := (set to 1 for one tick if) player did something
 
 The following is a list of all the scores:
 | Name | Type | Meaning |
