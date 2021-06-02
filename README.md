@@ -73,6 +73,7 @@ The following is a list of all the scores:
 # How It Works
 ## Type 1
 Type 1 includes: walk_bool, shift_bool, sprint_bool, sleep_bool, jump_bool, jump_bool, bow_bool, crossbow_bool, pearl_bool, carotClik_bool, fungiClik_bool, fishrClik_bool.
+
 Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, centimeters walked, etc). In another word, the game increments these scores automatically every time the player performs some actions. \
 I use a set of `helper` scores to count those values. \
 I use a set of `bool` scores to record the boolean output. \
