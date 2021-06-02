@@ -58,19 +58,21 @@ The following is a list of all the scores:
 | sleep_bool     | level | is     sleeping
 | sleep_begin    | edge  | starts sleeping
 | sleep_end      | edge  | stops  sleeping
-| shield_bool    | level | has shield in main or off hand
 | jump_bool      | edge  | jumped
+| offGrnd_begin  | edge  | lifted offground
+| offGrnd_end    | edge  | landed
+| shield_bool    | level | has shield in main or off hand
 | bow_bool       | edge  | used bow
 | crossbow_bool  | edge  | used crossbow
 | pearl_bool     | edge  | used ender pearl
-| offGrnd_begin  | edge  | lifted offground
-| offGrnd_end    | edge  | landed
 | carotClik_bool | edge  | right clicked using carrot stick
 | fungiClik_bool | edge  | right clicked using fungus stick
 | fishrClik_bool | edge  | right clicked using fishing rod
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
+## Type 1
+Type 1 includes: walk_bool, shift_bool, sprint_bool, sleep_bool, jump_bool, jump_bool, bow_bool, crossbow_bool, pearl_bool, carotClik_bool, fungiClik_bool, fishrClik_bool.
 Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, centimeters walked, etc). In another word, the game increments these scores automatically every time the player performs some actions. \
 I use a set of `helper` scores to count those values. \
 I use a set of `bool` scores to record the boolean output. \
