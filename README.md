@@ -246,7 +246,7 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 
 # Terms of Use
 Feel free to play around with this datapack. \
-As developer, deel free to use this datapack as a module to develop free datapacks. \
+As developer, feel free to use this datapack as a module to develop free datapacks. \
 But you **must** add the link to this github page! \
 **NO COMMERCIAL USE**
 ## License
