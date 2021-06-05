@@ -64,7 +64,7 @@ scoreboard objectives add fungiClik_bool dummy
 scoreboard objectives add fishrClik_bool dummy
 scoreboard objectives add bow_bool dummy
 scoreboard objectives add crossbow_bool dummy
-scoreboard objectives add shield_bool
+scoreboard objectives add shield_bool dummy
 scoreboard objectives add pearl_bool dummy
 
 scoreboard objectives add container_bool dummy
