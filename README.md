@@ -1,5 +1,5 @@
 # _Squid Workshop's_ Bools Data Pack
-A minecraft datapack library for global boolean system, which translates player's in-game actions into the form of scoreboard tags.
+A minecraft datapack library for global boolean system. Set scoreboard objectives xxx_bool to 1 when the players perform some actioins.
 
 - [Abstract](#Abstract)
 - [Installation](#Installation)
