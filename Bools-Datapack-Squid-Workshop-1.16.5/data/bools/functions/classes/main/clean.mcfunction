@@ -13,6 +13,7 @@ scoreboard objectives remove fishrClik_helper
 scoreboard objectives remove bow_helper
 scoreboard objectives remove crossbow_helper
 scoreboard objectives remove pearl_helper
+scoreboard objectives remove snowball_helper
 
 scoreboard objectives remove contnr_helper00
 scoreboard objectives remove contnr_helper01
@@ -52,10 +53,11 @@ scoreboard objectives remove bow_bool
 scoreboard objectives remove crossbow_bool
 scoreboard objectives remove shield_bool
 scoreboard objectives remove pearl_bool
+scoreboard objectives remove snowball_bool
 
 scoreboard objectives remove container_bool
 
 
 ########################################
-# Remove bools_timer variables
-scoreboard objectives remove bools_timer
+# Remove bools variables
+scoreboard objectives remove bools

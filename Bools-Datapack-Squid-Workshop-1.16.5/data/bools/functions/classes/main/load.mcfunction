@@ -17,6 +17,7 @@ scoreboard objectives add fishrClik_helper minecraft.used:minecraft.fishing_rod
 scoreboard objectives add bow_helper minecraft.used:minecraft.bow
 scoreboard objectives add crossbow_helper minecraft.used:minecraft.crossbow
 scoreboard objectives add pearl_helper minecraft.used:minecraft.ender_pearl
+scoreboard objectives add snowball_helper minecraft.used:minecraft.snowball
 
 scoreboard objectives add contnr_helper00 minecraft.custom:minecraft.open_barrel
 scoreboard objectives add contnr_helper01 minecraft.custom:minecraft.open_chest
@@ -66,14 +67,15 @@ scoreboard objectives add bow_bool dummy
 scoreboard objectives add crossbow_bool dummy
 scoreboard objectives add shield_bool dummy
 scoreboard objectives add pearl_bool dummy
+scoreboard objectives add snowball_bool dummy
 
 scoreboard objectives add container_bool dummy
 
 
 ########################################
-# Create bools_timer variables
-scoreboard objectives add bools_timer dummy
-scoreboard players set bools_timer bools_timer 1
+# Create bools timer variables
+scoreboard objectives add bools dummy
+scoreboard players set timer bools 1
 
 ########################################
 # Loading message
