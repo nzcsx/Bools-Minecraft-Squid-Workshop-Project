@@ -11,7 +11,8 @@ execute as @a run function bools:classes/carotclik/tick
 execute as @a run function bools:classes/fungiclik/tick
 execute as @a run function bools:classes/fishrclik/tick
 
-execute as @a run function bools:classes/container/tick
+#execute as @a run function bools:classes/container/tick
+execute as @a run scoreboard players set @s container_bool 0
 
 execute as @a run function bools:classes/jump/tick
 execute as @a run function bools:classes/offgrnd/tick
