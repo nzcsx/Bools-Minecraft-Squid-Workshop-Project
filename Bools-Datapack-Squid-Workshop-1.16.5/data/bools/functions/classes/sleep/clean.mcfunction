@@ -1,0 +1,4 @@
+scoreboard objectives remove sleep_helper
+scoreboard objectives remove sleep_bool
+scoreboard objectives remove sleep_begin
+scoreboard objectives remove sleep_end

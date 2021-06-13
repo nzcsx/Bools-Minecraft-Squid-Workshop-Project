@@ -1,0 +1,2 @@
+scoreboard objectives remove carotClik_helper
+scoreboard objectives remove carotClik_bool

@@ -1,0 +1,2 @@
+scoreboard objectives remove fungiClik_helper
+scoreboard objectives remove fungiClik_bool

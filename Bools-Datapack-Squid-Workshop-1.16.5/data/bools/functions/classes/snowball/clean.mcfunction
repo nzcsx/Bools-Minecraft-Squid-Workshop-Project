@@ -1,0 +1,2 @@
+scoreboard objectives remove snowball_helper
+scoreboard objectives remove snowball_bool

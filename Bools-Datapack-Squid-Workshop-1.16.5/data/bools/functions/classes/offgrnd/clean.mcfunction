@@ -1,0 +1,3 @@
+scoreboard objectives remove offGrnd_helper
+scoreboard objectives remove offGrnd_begin
+scoreboard objectives remove offGrnd_end

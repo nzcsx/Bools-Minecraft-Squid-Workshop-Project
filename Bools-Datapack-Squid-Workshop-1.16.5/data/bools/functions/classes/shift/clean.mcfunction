@@ -1,0 +1,4 @@
+scoreboard objectives remove shift_helper
+scoreboard objectives remove shift_bool
+scoreboard objectives remove shift_begin
+scoreboard objectives remove shift_end

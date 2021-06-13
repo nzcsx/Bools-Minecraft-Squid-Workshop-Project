@@ -1,0 +1,4 @@
+scoreboard objectives remove walk_helper
+scoreboard objectives remove walk_bool
+scoreboard objectives remove walk_begin
+scoreboard objectives remove walk_end

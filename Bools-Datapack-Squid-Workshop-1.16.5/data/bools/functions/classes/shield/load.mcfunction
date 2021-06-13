@@ -1,0 +1,1 @@
+scoreboard objectives add shield_bool dummy

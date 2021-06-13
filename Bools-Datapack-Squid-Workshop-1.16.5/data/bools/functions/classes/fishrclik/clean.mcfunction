@@ -1,0 +1,2 @@
+scoreboard objectives remove fishrClik_helper
+scoreboard objectives remove fishrClik_bool

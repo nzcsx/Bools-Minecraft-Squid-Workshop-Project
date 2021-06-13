@@ -1,0 +1,2 @@
+scoreboard objectives remove jump_helper
+scoreboard objectives remove jump_bool

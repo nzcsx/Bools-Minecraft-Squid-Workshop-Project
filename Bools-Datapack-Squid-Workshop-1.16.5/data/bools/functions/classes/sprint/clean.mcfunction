@@ -1,0 +1,4 @@
+scoreboard objectives remove sprint_helper
+scoreboard objectives remove sprint_bool
+scoreboard objectives remove sprint_begin
+scoreboard objectives remove sprint_end

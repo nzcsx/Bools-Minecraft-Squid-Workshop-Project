@@ -1,0 +1,2 @@
+scoreboard objectives remove pearl_helper
+scoreboard objectives remove pearl_bool

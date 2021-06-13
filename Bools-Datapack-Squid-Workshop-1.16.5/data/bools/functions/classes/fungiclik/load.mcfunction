@@ -1,0 +1,2 @@
+scoreboard objectives add fungiClik_helper minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add fungiClik_bool dummy

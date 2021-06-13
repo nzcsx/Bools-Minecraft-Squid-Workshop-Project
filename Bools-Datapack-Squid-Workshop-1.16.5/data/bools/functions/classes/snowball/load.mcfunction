@@ -1,0 +1,2 @@
+scoreboard objectives add snowball_helper minecraft.used:minecraft.snowball
+scoreboard objectives add snowball_bool dummy

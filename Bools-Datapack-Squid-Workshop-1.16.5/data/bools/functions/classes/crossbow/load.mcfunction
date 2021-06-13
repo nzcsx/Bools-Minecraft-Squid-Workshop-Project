@@ -1,0 +1,2 @@
+scoreboard objectives add crossbow_helper minecraft.used:minecraft.crossbow
+scoreboard objectives add crossbow_bool dummy
