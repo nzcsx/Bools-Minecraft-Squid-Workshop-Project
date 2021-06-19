@@ -251,13 +251,6 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 		│          │      load.mcfunction
 		│          │      tick.mcfunction
 		│          │      
-		│          ├─shift
-		│          │      clean.mcfunction
-		│          │      every_tick.mcfunction
-		│          │      load.mcfunction
-		│          │      three_ticks.mcfunction
-		│          │      tick.mcfunction
-		│          │      
 		│          ├─sleep
 		│          │      clean.mcfunction
 		│          │      load.mcfunction
@@ -266,6 +259,13 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 		│          ├─snowball
 		│          │      clean.mcfunction
 		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─shift
+		│          │      clean.mcfunction
+		│          │      every_tick.mcfunction
+		│          │      load.mcfunction
+		│          │      three_ticks.mcfunction
 		│          │      tick.mcfunction
 		│          │      
 		│          ├─sprint
