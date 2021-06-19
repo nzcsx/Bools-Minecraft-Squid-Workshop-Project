@@ -1,0 +1,115 @@
+卷 个人 的文件夹 PATH 列表
+卷序列号为 0F9F-55E0
+E:.
+│  LICENSE
+│  README.md
+│  tree.txt
+│  
+└─Bools-Datapack-Squid-Workshop-1.16.5
+    │  pack.mcmeta
+    │  pack.png
+    │  
+    └─data
+        ├─app
+        │  └─functions
+        │      ├─help
+        │      │      bools.mcfunction
+        │      │      
+        │      └─unload
+        │              bools.mcfunction
+        │              
+        ├─bools
+        │  └─functions
+        │      └─classes
+        │          ├─bow
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─carotclik
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─container
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─crossbow
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─fishrclik
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─fungiclik
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─jump
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─main
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─offgrnd
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─pearl
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─shield
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─shift
+        │          │      clean.mcfunction
+        │          │      every_tick.mcfunction
+        │          │      load.mcfunction
+        │          │      three_ticks.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─sleep
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─snowball
+        │          │      clean.mcfunction
+        │          │      load.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          ├─sprint
+        │          │      clean.mcfunction
+        │          │      every_tick.mcfunction
+        │          │      load.mcfunction
+        │          │      three_ticks.mcfunction
+        │          │      tick.mcfunction
+        │          │      
+        │          └─walk
+        │                  clean.mcfunction
+        │                  every_tick.mcfunction
+        │                  load.mcfunction
+        │                  three_ticks.mcfunction
+        │                  tick.mcfunction
+        │                  
+        └─minecraft
+            └─tags
+                └─functions
+                        load.json
+                        tick.json
+                        
