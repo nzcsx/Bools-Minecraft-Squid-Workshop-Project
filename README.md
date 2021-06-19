@@ -188,46 +188,105 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 		├─app
 		│  └─functions
 		│      ├─help
-		│      │       bools.mcfunction
+		│      │      bools.mcfunction
+		│      │      
 		│      └─unload
 		│              bools.mcfunction
 		│              
 		├─bools
 		│  └─functions
-		│      └─classes  
+		│      └─classes
 		│          ├─main
-		│          │       clean.mcfunction
-		│          │       load.mcfunction
-		│          │       tick.mcfunction
-		│          └─core
-		│                  check_every_tick.mcfunction
-		│                  check_three_ticks.mcfunction
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─bow
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─carotclik
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─container
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─crossbow
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─fishrclik
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─fungiclik
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─jump
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─offgrnd
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─pearl
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─shield
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─shift
+		│          │      clean.mcfunction
+		│          │      every_tick.mcfunction
+		│          │      load.mcfunction
+		│          │      three_ticks.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─sleep
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─snowball
+		│          │      clean.mcfunction
+		│          │      load.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          ├─sprint
+		│          │      clean.mcfunction
+		│          │      every_tick.mcfunction
+		│          │      load.mcfunction
+		│          │      three_ticks.mcfunction
+		│          │      tick.mcfunction
+		│          │      
+		│          └─walk
+		│                  clean.mcfunction
+		│                  every_tick.mcfunction
+		│                  load.mcfunction
+		│                  three_ticks.mcfunction
+		│                  tick.mcfunction
 		│                  
 		└─minecraft
 		    └─tags
 			└─functions
 				load.json
 				tick.json
-
-# Call Tree
-	  /minecraft/tags/functions/tick.json
-	    │  
-	    └─/bools/functions/classes/main/tick.mcfunction
-		│
-		├─/bools/functions/classes/core/check_every_tick.mcfunction
-		└─/bools/functions/classes/core/check_three_ticks.mcfunction
-		
-	  /minecraft/tags/functions/load.json
-	    │  
-	    └─/bools/functions/classes/main/load.mcfunction
-		│
-		└─/bools/functions/classes/main/clean.mcfunction
-
-	  /app/functions/unload/bools.mcfunction
-	    │  
-	    └─/bools/functions/classes/main/clean.mcfunction
-	    
-	  /app/functions/help/bools.mcfunction
 
 
 # Terms of Use
