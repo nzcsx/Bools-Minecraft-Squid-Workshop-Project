@@ -28,7 +28,7 @@ PS: If not working, check whether the datapack is enabled by:
 Enable it by:
 
 	/datapack enable "datapackname"
-  
+   
 # Usage
 You can use the selector or if-statement in command to check if players have the tags.
 
