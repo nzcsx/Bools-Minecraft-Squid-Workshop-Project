@@ -13,11 +13,11 @@ A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global b
 This data pack translates player actions into booleans. I chose to use scoreboard objectives to represent the booleans ({score=1} == True, {score=0} == False). These objective scores are read-only and should NOT be modified manually in-game.
 
 # Installation
-- Step 1 Download this repository as a zip and unpack.
+- Step 1 Download "Bools-Datapack-Squid-Workshop-1.16.5.zip".
 - Step 2 Go to minecraft saves directory, usually "C:/Users/youUserName/AppData/Roaming/.minecraft/saves".
 - Step 3 Choose the world folder in which you want to install the packs.
-- Step 4 Go to .../world/datapacks folder.
-- Step 5 Move your "Bools-Datapack-Squid-Workshop-1.16.5" folder(not the root folder) into .../world/datapacks folder.
+- Step 4 Go to ../datapacks folder.
+- Step 5 Move "Bools-Datapack-Squid-Workshop-1.16.5.zip" into ../datapacks folder.
 - Step 6 Open Minecraft and open the world.
 - Step 7 Type "/reload" command then press enter.
 - Step 8 Enjoy
@@ -28,7 +28,7 @@ PS: If not working, check whether the datapack is enabled by:
 Enable it by:
 
 	/datapack enable "datapackname"
-  
+   
 # Usage
 You can use the selector or if-statement in command to check if players have the tags.
 
