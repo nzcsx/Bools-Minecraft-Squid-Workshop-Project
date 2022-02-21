@@ -1,3 +1,5 @@
+scoreboard objectives remove container_bool
+
 scoreboard objectives remove contnr_helper00
 scoreboard objectives remove contnr_helper01
 scoreboard objectives remove contnr_helper02
@@ -9,5 +11,3 @@ scoreboard objectives remove contnr_helper07
 scoreboard objectives remove contnr_helper08
 scoreboard objectives remove contnr_helper09
 scoreboard objectives remove contnr_helper10
-
-scoreboard objectives remove container_bool
