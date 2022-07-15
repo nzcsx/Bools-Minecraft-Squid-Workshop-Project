@@ -116,7 +116,7 @@ The logic is shown below:
 ## Type 3
 Type 3 includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
 
-However there is some slight issue because it's actually wrong to assume that the game increments the `helper` EVERY tick as the player performs some continuous actions.
+However, there is some slight issue because the game sometimes does not increment the `helper` EVERY tick as the player performs some continuous actions.
 - Correct statement:  
 
       Total_amount_of_jumps increases at the tick the player jumps. 
@@ -124,9 +124,9 @@ However there is some slight issue because it's actually wrong to assume that th
 	
       Total_cm_walked will keep increasing every tick as the player keeps walking.
 
-When a player is quickly turning or stops walking, there is a slowing down period. During such period, the total_cm_walked follows the pattern: unchanged for 3 ticks, increased for 1 tick. 
+Why? Because When a player is quickly turning or stops walking, there is a slowing down period. During this period, player can walk less than a centimeter in a tick, and the increment will not be recorded. Through my observation, when slowing down, the total_cm_walked tends to follow the pattern: unchanged for 3 ticks, increased for 1 tick. 
 
-The way I solved it is rather simple. I check if to update `bool` once every 3 ticks instead of every tick. I also check if to update `begin`, `end` to 1 once every 3 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore for those bools, the logic becomes:
+I worked around it with a simple trick. I check if to update `bool` once every 3 ticks instead of every tick. I also check if to update `begin`, `end` to 1 once every 3 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore for those bools, the logic becomes:
 
 	Loop per tick:
 	    # Game updates helper #
