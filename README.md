@@ -3,7 +3,7 @@ A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global b
 
 - [Abstract](#Abstract)
 - [Installation](#Installation)
-- [Usage](#Usage)
+- [How to Use](#How-to-Use])
 - [How It Works](#How-It-Works)
 - [Project Tree](#Project-Tree)
 - [Terms of Use](#Terms-of-Use)
@@ -29,7 +29,7 @@ Enable it by:
 
 	/datapack enable "datapackname"
    
-# Usage
+# How to Use
 You can use the selector or if-statement in command to check if players have the tags.
 
 - This command gives an apple to players that jumped:
