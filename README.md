@@ -73,7 +73,7 @@ The following is a list of all the scores:
 
 # How It Works
 ## Type 1
-Type 1 includes: `walk_bool`, `shift_bool`, `sprint_bool`, `sleep_bool`, `jump_bool`, `bow_bool`, `crossbow_bool`, `pearl_bool`, `snowball_bool`, `carotClik_bool`, `fungiClik_bool`, `fishrClik_bool`, `sleep_bool` (However, we need to make some modifications for `walk`, `shift` and `sprint`, see Type 3 for details. )
+Type 1 includes: `sleep_bool`, `jump_bool`, `bow_bool`, `crossbow_bool`, `pearl_bool`, `snowball_bool`, `carotClik_bool`, `fungiClik_bool`, `fishrClik_bool`, `sleep_bool` 
 
 Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, centimeters walked, etc). In other words, the game increments these scores automatically every time the player performs some actions. \
 I use a set of `helper` scores to count those values. \
@@ -114,7 +114,8 @@ The logic is shown below:
 
 
 ## Type 3
-Type 3 includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
+Type 3a includes: `walk_bool`, `shift_bool`, `sprint_bool`,
+Type 3b includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
 
 However, there is some slight issue because the game sometimes does not increment the `helper` EVERY tick as the player performs some continuous actions.
 - Correct statement:  
