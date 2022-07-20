@@ -90,7 +90,7 @@ The logic is shown below:
 	    helper = 0
 
 ## Type 2
-Type 2a includes: `sleep_bool`
+Type 2a includes: `sleep_bool`\
 Type 2b includes: `sleep_begin, sleep_end, offGrnd_begin, offGrnd_end`
 
 `Begin` and `end` scores record the beginning tick and end tick of actions. Since both `begin` and `end` are edge scores, we first reset them to 0. Then we check how to set `begin` and `end`. \
@@ -115,7 +115,7 @@ The logic is shown below:
 
 
 ## Type 3
-Type 3a includes: `walk_bool`, `shift_bool`, `sprint_bool`,
+Type 3a includes: `walk_bool`, `shift_bool`, `sprint_bool` \
 Type 3b includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
 
 However, there is some slight issue because the game sometimes does not increment the `helper` EVERY tick as the player performs some continuous actions.
