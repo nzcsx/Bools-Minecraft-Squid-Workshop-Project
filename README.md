@@ -113,9 +113,9 @@ The logic is shown below:
 	    helper = 0
 
 
-## Type 3
-Type 3a includes: `walk_bool`, `shift_bool`, `sprint_bool`,
-Type 3b includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
+## Type 3 & 4
+Type 3 includes: `walk_bool`, `shift_bool`, `sprint_bool`,
+Type 4 includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
 
 However, there is some slight issue because the game sometimes does not increment the `helper` EVERY tick as the player performs some continuous actions.
 - Correct statement:  
