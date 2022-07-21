@@ -20,7 +20,7 @@ This data pack translates player actions into booleans. I chose to use scoreboar
 - Step 4 Go to ../datapacks folder.
 - Step 5 Move "Bools-Datapack-Squid-Workshop-1.16.5.zip" into ../datapacks folder.
 - Step 6 Open Minecraft and open the world.
-- Step 7 Type "/reload" command then press enter.
+- Step 7 Type '/reload" command then press enter.
 - Step 8 Enjoy
 
 PS: If not working, check whether the datapack is enabled by:
@@ -34,8 +34,7 @@ Enable it by:
 - Step 1 Delete the zip file from ../datapacks folder.
 - Step 2 Use command:
 
-	/function app:unload/bools
-
+	  /function app:unload/bools
 This automatically deletes all the scoreboard objectives created in this datapack. 
 
 
