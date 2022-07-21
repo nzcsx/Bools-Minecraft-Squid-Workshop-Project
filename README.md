@@ -251,7 +251,7 @@ Note how I used a timer to implement "once every three ticks".
 ## Others
 The rest includes: `shield_bool`, `container_bool`
 
-`shield_bool` checks players' nbt tag to see if they are holding shields either in main hand or offhand by checking player's nbt tag. It does not use any helper at all. The logic is simply this:
+`shield_bool` checks players' nbt tag to see if they are holding shields either in main hand or offhand. It does not use any helper at all. The logic is simply this:
 
 ```
 shield_bool = 0
