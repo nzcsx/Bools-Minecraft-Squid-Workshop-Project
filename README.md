@@ -142,6 +142,7 @@ Notice how `walk_bool`, `shift_bool`, and `sprint_bool` are missing from the lis
 
 ```
 Loop per tick:
+
     # Game updates helper #
     
     bool = 0
