@@ -35,7 +35,8 @@ Enable it by:
 - Step 2 Use command:
 
 	/function app:unload/bools
-  This automatically deletes all the scoreboard objectives created in this datapack. 
+
+This automatically deletes all the scoreboard objectives created in this datapack. 
 
 
 # How to Use
