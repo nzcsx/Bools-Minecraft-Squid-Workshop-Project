@@ -3,7 +3,7 @@ A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global b
 
 - [Abstract](#Abstract)
 - [How to Install/Uninstall](#How-to-Install/Uninstall)
-- [How to Use](#How-to-Use])
+- [How to Use](#How-to-Use)
 - [How It Works](#How-It-Works)
 - [Project Tree](#Project-Tree)
 - [Terms of Use](#Terms-of-Use)
