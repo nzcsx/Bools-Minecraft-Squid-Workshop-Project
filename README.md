@@ -31,7 +31,7 @@ Enable it by:
 	/datapack enable "datapackname"
 
 ## Unload (Uninstall)
-- Step 1 Delete the zip file from .minecraft/saves/datapacks folder.
+- Step 1 Delete the zip file from ../datapacks folder.
 - Step 2 Use command /function app:unload/bools
 
 
