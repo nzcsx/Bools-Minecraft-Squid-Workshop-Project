@@ -74,7 +74,7 @@ The following is a list of all the scores:
 | bow_bool       | edge  | used bow
 | crossbow_bool  | edge  | used crossbow
 | pearl_bool     | edge  | used ender pearl
-| snowball_bool     | edge  | used ender pearl
+| snowball_bool     | edge  | used snowball
 | carotClik_bool | edge  | right clicked using carrot stick
 | fungiClik_bool | edge  | right clicked using fungus stick
 | fishrClik_bool | edge  | right clicked using fishing rod
