@@ -277,10 +277,11 @@ if (shield offhand)
 The logic is shown below:
 ```
 Loop per tick:
+
     # Game updates helper #
 
     bool = 0
-    unless ( helper00 == 00 && ... && helper10 == 0 )
+    unless ( helper00 == 0 && ... && helper10 == 0 )
 	bool = 1
 
     helper00 = 0
