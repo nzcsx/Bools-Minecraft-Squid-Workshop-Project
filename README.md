@@ -2,7 +2,7 @@
 A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global boolean system, setting scoreboard objectives xxx_bool to 1 when the players perform some actioins.
 
 - [Abstract](#Abstract)
-- [Installation](#Installation)
+- [How to Install/Uninstall](#How-to-Install/Uninstall)
 - [How to Use](#How-to-Use])
 - [How It Works](#How-It-Works)
 - [Project Tree](#Project-Tree)
@@ -12,7 +12,8 @@ A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global b
 # Abstract
 This data pack translates player actions into booleans. I chose to use scoreboard objectives to represent the booleans ({score=1} == True, {score=0} == False). These objective scores are read-only and should NOT be modified manually in-game.
 
-# Installation
+# How to Install/Uninstall
+## Load (Install)
 - Step 1 Download "Bools-Datapack-Squid-Workshop-1.16.5.zip".
 - Step 2 Go to minecraft saves directory, usually "C:/Users/youUserName/AppData/Roaming/.minecraft/saves".
 - Step 3 Choose the world folder in which you want to install the packs.
@@ -28,7 +29,12 @@ PS: If not working, check whether the datapack is enabled by:
 Enable it by:
 
 	/datapack enable "datapackname"
-   
+
+## Unload (Uninstall)
+- Step 1 Delete the zip file from .minecraft/saves/datapacks folder.
+- Step 2 Use command /function app:unload/bools
+
+
 # How to Use
 You can use the selector or if-statement in command to check if players have the tags.
 
