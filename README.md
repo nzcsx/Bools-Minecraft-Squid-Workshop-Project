@@ -242,9 +242,15 @@ Note how I used a timer to implement "once every three ticks".
 ## Others
 The rest includes: `shield_bool`, `container_bool`
 
-`shield_bool` simply checks players' nbt tag to see if they are holding shields either in main hand or off-hand. It does not use any helper at all. The logic is simply this:
-shield_bool = 1
-if (shield in main hand or shield off hand)
+`shield_bool` checks players' nbt tag to see if they are holding shields either in main hand or offhand by checking player's nbt tag. It does not use any helper at all. The logic is simply this:
+
+```
+shield_bool = 0
+if (shield in main hand)
+	shield_bool = 1
+if (shield offhand)
+	shield_bool = 1
+```
 
 `container_bool` is similar to Type 1 scores. However, because there are multiple containers to consider, there are multiple `helpers`. \
 `helper00` := barrel \
@@ -259,17 +265,19 @@ if (shield in main hand or shield off hand)
 `helper09` := dropper \
 `helper10` := hopper \
 The logic is shown below:
+```
+Loop per tick:
+    # Game updates helper #
 
-	Loop per tick:
-	    # Game updates helper #
-	    
-	    bool = 0
-	    unless ( helper00 == 0 && ... && helper10 == 0 )
-	    	bool = 1
-	    for helper00 to helper10
- 	    	helper = 0
-		
-Ok. I swear I'll finish this before 2021/June/6 (if not I'll update this date)
+    bool = 0
+    unless ( helper00 == 00 && ... && helper10 == 0 )
+	bool = 1
+
+    helper00 = 0
+    helper01 = 0
+    ...
+    helper10 = 0
+```
 
 # Project Tree
 See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/master/CONTRIBUTING.md) for our standard datapack structure and how this structure works.
