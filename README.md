@@ -72,87 +72,179 @@ The following is a list of all the scores:
 | container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest//blast_furnace/furnace/smoker//dispenser/dropper/hopper
 
 # How It Works
+## Scoreboard Criteria
+First of all I want to talk about how those scoreboard criteria works. Say, we create a new scoreboard objective like this:
+
+`/scoreboard objectives add walk_meter minecraft.custom:minecraft.walk_one_cm`
+
+`walk_meter` is the objective name. `minecraft.custom:minecraft.walk_one_cm`  is the criterion. Now if a player starts walking, this player's  objective score increments, indicating how many centimeters they have  walked. (You can display the scoreboard on sidebar here using `/scoreboard objectives setdisplay sidebar walk_meter`)
+
+[insert walking screen]
+
+Another example would be a jump counter.
+
+`/scoreboard objectives add jump_counter minecraft.custom:minecraft.jump`
+
+Now if a player jumps, this player's objective score increments, indicating how many jumps they have... well, jumped.
+
+[insert jump screen]
+
+There  are multiple criteria we can play with, and we are going to make boolean walking, jumping detectors out of those later. However, I'd like  to draw a distinction here between two concepts..._edge_ and _level_
+
+## Level & Edge Scores
+Now imagine we somehow successfully create a boolean walking detector and a boolean jumping detector. If a player keeps walking, the walking score will continuously be 1. If players jumps and jumps and jumps, the score will be 1 only at the tick the player is jumping. In other words, the walking detector is continuous, and the jump detector is a pulse.
+
+We call the continuous ones _level_ scores, and the pulsing ones _edge_ scores.
+
+Also imagine if we somehow even managed to create a boolean starts-walking,  stops-walking detector (And spoiler alert: we can! ), they will be _edge_ scores too!
+
+This piece of information is actually not that important to how to implement the detectors, but it helps us understand how to use those detectors. 
+
+## Minecraft Game Update Hierachy
+When it comes to command, in every tick, the game processes stuffs in the following hierachy: 
+1. Player action and inherent game mechanism. 
+2. Minecraft functions. 
+3. Minecraft command blocks. 
+Keep this in mind, not only for the sake of this post, but also for your future projects. Now without further ado, let's jump right into the logics.
+
+## Key Idea
+Now let's give `walk_meter`, `jump_counter`, etc a common name - `xxx_helper`.  The key idea of a boolean detector is that we keep resetting the helper  every tick. If the helper stays zero, the player is not taking any action. If the counter rises above zero, the player is doing stuffs.
+
+And here is a little piece of pseudo code to help us understand the logic:
+
+```
+Loop per tick:
+
+    # Game updates helper #
+
+    bool = 0 
+    if ( helper > 0 ): 
+        bool = 1 
+    helper = 0
+```
+
+The game updates the helper objective scores as an inherent game mechanism. After that, we need three command blocks to implement the loop. 
+
 ## Type 1
+
 Type 1 includes: `jump_bool`, `bow_bool`, `crossbow_bool`, `pearl_bool`, `snowball_bool`, `carotClik_bool`, `fungiClik_bool`, `fishrClik_bool` 
 
-Minecraft provides a lot of scores that automatically count the player actions (the amount of jumps, centimeters walked, etc). In other words, the game increments these scores automatically every time the player performs some actions. \
-I use a set of `helper` scores to count those values. \
-I use a set of `bool` scores to record the boolean output. \
-Every time the `helper` increases above 0, I set `bool` to 1 and reset `helper` to 0. \
-The logic is shown below:
+Notice how `walk_bool`, `shift_bool`, and `sprint_bool` are missing from the list, and all of the Type 1 scores are _edge_ scores? We are going to explain why in detail in Type 4 section. For now, just know that Type 1 is exactly the same as the key idea above. 
 
-	Loop per tick:
-	    # Game updates helper #
-	    
-	    bool = 0
- 	    if ( helper > 0 )
- 	        bool = 1
-	    helper = 0
+```
+Loop per tick:
+    # Game updates helper #
+    
+    bool = 0
+    if ( helper > 0 )
+	bool = 1
+    helper = 0
+```
 
 ## Type 2
 Type 2a includes: `sleep_bool`\
-Type 2b includes: `sleep_begin, sleep_end, offGrnd_begin, offGrnd_end`
+Type 2b includes: `sleep_begin`, `sleep_end`
 
-`Begin` and `end` scores record the beginning tick and end tick of actions. Since both `begin` and `end` are edge scores, we first reset them to 0. Then we check how to set `begin` and `end`. \
-If `bool` is 1 and `helper` > 0, meaning the player is not doing something in the previous tick but is doing it in the current tick, we set `begin` to 1. \
-If `bool` is 0 and `helper` = 0, meaning the player is doing something in the previous tick but is not doing it in the current tick, we set `end` to 1. \
-The logic is shown below:
+`sleep_bool` is sort of an oddball. There is no scoreboard criterion related to sleep time. Instead, a player's sleep time is stored as a `SleepTimer` nbt tag. Therefore, we cannot expect the game to update the `sleep_helper` automatically. However, it really isn't much hassel, and we can just manually store the nbt tag value into `sleep_helper` in the beginning of each loop. 
 
-	Loop per tick:
-	    # Game updates helper #
-	    
-	    begin = 0
-	    end = 0
-	    if ( helper > 0 && bool = 0 )
-	    	begin = 1
-	    if ( helper = 0 && bool = 1 )
-	    	end = 1
-		
-	    bool = 0
- 	    if ( helper > 0 )
- 	        bool = 1
-	    helper = 0
+Now with those out of the way, let's finally take a look at the logic behind `xxx_begin` and `xxx_end`: 
 
+```
+Loop per tick:
+
+    # We store SleepTimer value into sleep_helper #
+
+    begin = 0
+    end = 0
+    if ( helper > 0 && bool == 0 )
+    	begin = 1
+    if ( helper == 0 && bool == 1 )
+    	end = 1
+
+    bool = 0
+    if ( helper > 0 )
+        bool = 1
+    helper = 0
+```
+
+The last four lines, which pertain to the `sleep_bool` update, are very standard, exactly the same as Type 1, so I won't reiterate here. 
+
+So let's try to understand `sleep_begin` and `sleep_end`. The idea is that we use `sleep_bool` as an indicator of state in previous tick, and `sleeper_helper` as an indicator of state in current tick. 
+
+If `bool` is 1 and `helper` > 0, meaning the player was previously not sleeping, but now sleeping, then the sleep begins! \
+If `bool` is 0 and `helper` = 0, meaning the player was previously sleeping, but now not sleeping, then the sleep ends! \
+
+It's that simple! Using this method we manage to update `begin` and `end`. 
 
 ## Type 3
-Type 3a includes: `walk_bool`, `shift_bool`, `sprint_bool` \
-Type 3b includes: `walk_begin, walk_end, shift_begin, shift_end, sprint_begin, sprint_end`
+Type 3b includes: `offGrnd_begin`, `offGrnd_end`
 
-However, there is some slight issue because the game sometimes does not increment the `helper` EVERY tick as the player performs some continuous actions.
-- Correct statement:  
+Note how there is no Type 3a `offGrnd_bool`. This is because the one can directly check the `OnGround` nbt tag of a player using the command `/execute as playerName if entity @s[nbt={OnGround:true}] run say I'm on Ground!` Hence, the `offGrnd_bool` isn't necessary! 
 
-      Total_amount_of_jumps increases at the tick the player jumps. 
-- Incorrect statement: 
-	
-      Total_cm_walked will keep increasing every tick as the player keeps walking.
+In this case, since `OnGround` nbt tag is updated by game automatically, we don't need to update `OffGrnd_bool` score manually. 
 
-Why? Because When a player is quickly turning or stops walking, there is a slowing down period. During this period, player can walk less than a centimeter in a tick, and the increment will not be recorded. Through my observation, when slowing down, the total_cm_walked tends to follow the pattern: unchanged for 3 ticks, increased for 1 tick. 
+As for the `begin` and `end`: This also means we need to use `OnGround` as an indicator of state of current tick (Because the Game Update Hierachy dictates that nbt tags are parsed before functions, and reflects the accurate status quo of the player. ) 
 
-I worked around it with a simple trick. I check if to update `bool` once every 3 ticks instead of every tick. I also check if to update `begin`, `end` to 1 once every 3 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. Therefore for those bools, the logic becomes:
+Since we already have an indicator of current state, we can just use `offGrnd_helper` as a previous state indicator. We just manually update the `offGrnd_helper` using `OnGround` nbt tag. 
 
-	Loop per tick:
-	    # Game updates helper #
-	    timer switches among 1, 2, 3
-	    
-	    begin = 0
-	    end = 0
-	    
-	    if ( timer == 1 )    
-	    	if ( helper > 0 && bool = 0 )
-	    	    begin = 1
-	    	if ( helper = 0 && bool = 1 )
-	    	    end = 1
-		
-	    	bool = 0
- 	    	if ( helper > 0 )
- 	           bool = 1
-	    	helper = 0
+```
+Loop per tick:
+    
+    # Game updates OnGround #
 
+    begin = 0
+    end = 0
+    if ( helper > 0 && OnGround == false )
+    	begin = 1
+    if ( helper = 0 && OnGround == true )
+    	end = 1
+
+    if (OnGround == false)
+    	helper = 1
+    if (OnGround == true)
+    	helper = 0
+```
+
+## Type 4
+Type 4a includes: `walk_bool`, `shift_bool`, `sprint_bool` \
+Type 4b includes: `walk_begin`, `walk_end`, `shift_begin`, `shift_end`, `sprint_begin`, `sprint_end`
+
+Finally! The long waited trio! At first glance, they should be pretty straightforward, why not just reuse the logic for begin and end we used before? 
+
+Unfortunately, here is a slight issue: sometimes the game does not increment the continuous-criteria scores (a.k.a the helper) every tick! And since we reset the helper and bool every tick, they are gonna be 0 sometimes in the middle of continuous action! 
+
+Clearly we don't want that. My remedy is updating `xxx_helper` and `xxx_bool` less frequently. I update them once every three ticks instead of once every tick. This is from my observation that such irragularity doesn't last more than 2 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. 
+
+Hence now, the logic becomes:
+
+```
+Loop per tick:
+
+    # Game updates helper #
+    timer switches among 1, 2, 3
+
+    begin = 0
+    end = 0
+    
+    if ( timer == 1 )    
+	if ( helper > 0 && bool = 0 )
+	    begin = 1
+	if ( helper = 0 && bool = 1 )
+	    end = 1
+
+	bool = 0
+	if ( helper > 0 )
+	   bool = 1
+	helper = 0
+```
+Note how I used a timer to implement "once every three ticks". 
 
 ## Others
-The rest includes: `shield_bool, container_bool`
+The rest includes: `shield_bool`, `container_bool`
 
-`shield_bool` simply checks players' nbt tag to see if they are holding shields. It does not use scoreboard system at all.
+`shield_bool` simply checks players' nbt tag to see if they are holding shields either in main hand or off-hand. It does not use any helper at all. The logic is simply this:
+shield_bool = 1
+if (shield in main hand or shield off hand)
 
 `container_bool` is similar to Type 1 scores. However, because there are multiple containers to consider, there are multiple `helpers`. \
 `helper00` := barrel \
