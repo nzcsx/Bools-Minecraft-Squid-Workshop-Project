@@ -402,6 +402,61 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 				tick.json
 
 
+FAQ
+Q: How to use your datapack? \
+A: You can find the instructions in the link above.
+
+
+
+Q: How do I install/uninstall? \
+A: Again, you can find the instructions in the link above.
+
+
+
+Q: I don't know how to use GitHub. How can I download it? \
+A: On the GitHub page, you can see a Releases section on the right. Click it, which directs to Releases page. Then click the Bools-Datapack-Squid-Workshop-1.16.5.zip file to download.
+
+
+
+Q: What version of the game is it compatible with? \
+A: I wrote the pack in 1.16.5, and it is compatible upto at least 1.19.1 (and the foreseeable future versions). The syntax used are pretty basic, and I don't expect Mojang to make any big changes in the future.
+
+
+
+Q: We created a lot of scoreboard objectives. Are they still there after I uninstall? \
+A: If we follow the instruction in the GitHub page, all of the objectives will be deleted. If we made a mistake while uninstalling, we can simply reinstall and uninstall it again.
+
+
+
+Q: Why don't we use scoreboard tags instead of scoreboard objectives? \
+A: Because when we don't want to play with these scores anymore, we can just delete them. If we use tags, we cannot remove the tags on the players who are not online, which can cause trouble.
+
+
+
+Q: What is the meaning of life? \
+A: You didn't know? It's just █̵̭̩̦͍̒͑█̵̳̝̃̚█̷̨̺̮͈̆̓͠█̷̙͑█
+
+
+
+Q: What if I want more bools? \
+A: You can create "issues" here on GitHub to make a suggestion.
+
+
+
+Q: Can I modify your pack to suit my need? \
+A: Yes you can. The datapack is under Mozilla Public License 2.0. However, please don't copy paste the code without acknowledging the source.
+
+
+
+Q: What inspired you to make this datapack? \
+A: I was tired of writing same pieces of code for every datapack I made. Plus, I don't like adding a bunch of redundant scoreboard objectives for every datapack. So I decided to make an API datapack for everyone to use.
+
+
+
+Q: I have more questions! \
+A: Again you can create "issues" here on GitHub to make a suggestion. 
+
+
 # Terms of Use
 Feel free to play around with this datapack. \
 As developer, feel free to use this datapack as a module to develop free datapacks. \
