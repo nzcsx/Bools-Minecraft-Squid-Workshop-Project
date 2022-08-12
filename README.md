@@ -6,6 +6,7 @@ A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global b
 - [How to Use](#How-to-Use)
 - [How It Works](#How-It-Works)
 - [Project Tree](#Project-Tree)
+- [FAQ](#FAQ)
 - [Terms of Use](#Terms-of-Use)
 - [More About Squid Workshop](#More-About-Squid-Workshop)
 
@@ -402,7 +403,7 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 				tick.json
 
 
-FAQ
+# FAQ
 Q: How to use your datapack? \
 A: You can find the instructions in the link above.
 
