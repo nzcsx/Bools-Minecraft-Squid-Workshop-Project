@@ -404,18 +404,8 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 
 
 # FAQ
-Q: How to use your datapack? \
-A: You can find the instructions in the link above.
-
-
-
-Q: How do I install/uninstall? \
-A: Again, you can find the instructions in the link above.
-
-
-
 Q: I don't know how to use GitHub. How can I download it? \
-A: On the GitHub page, you can see a Releases section on the right. Click it, which directs to Releases page. Then click the Bools-Datapack-Squid-Workshop-1.16.5.zip file to download.
+A: On this GitHub page, you can see a Releases section on the right. Click it, which directs to the Releases page. Then click the Bools-Datapack-Squid-Workshop-1.16.5.zip file to download.
 
 
 
