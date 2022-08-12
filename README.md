@@ -40,7 +40,7 @@ This automatically deletes all the scoreboard objectives created in this datapac
 
 
 # How to Use
-You can use the selector or if-statement in command to check if players have the tags.
+You can use the selector or if-statement in command to check if players have the scores.
 
 - This command gives an apple to players that jumped:
 
@@ -75,7 +75,7 @@ The following is a list of all the scores:
 | bow_bool       | edge  | used bow
 | crossbow_bool  | edge  | used crossbow
 | pearl_bool     | edge  | used ender pearl
-| snowball_bool     | edge  | used snowball
+| snowball_bool  | edge  | used snowball
 | carotClik_bool | edge  | right clicked using carrot stick
 | fungiClik_bool | edge  | right clicked using fungus stick
 | fishrClik_bool | edge  | right clicked using fishing rod
