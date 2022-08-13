@@ -89,7 +89,7 @@ First of all I want to talk about how those scoreboard criteria works. Say, we c
 
 `walk_meter` is the objective name. `minecraft.custom:minecraft.walk_one_cm`  is the criterion. Now if a player starts walking, this player's  objective score increments, indicating how many centimeters they have  walked. (You can display the scoreboard on sidebar here using `/scoreboard objectives setdisplay sidebar walk_meter`)
 
-[insert walking screen]
+![walk_meter](README_media/walk_meter.PNG)
 
 Another example would be a jump counter.
 
@@ -97,7 +97,7 @@ Another example would be a jump counter.
 
 Now if a player jumps, this player's objective score increments, indicating how many jumps they have... well, jumped.
 
-[insert jump screen]
+![jump_counter](README_media/jump_counter.PNG)
 
 There  are multiple criteria we can play with, and we are going to make boolean walking, jumping detectors out of those later. However, I'd like  to draw a distinction here between two concepts..._edge_ and _level_
 
