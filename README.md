@@ -110,7 +110,7 @@ Also imagine if we somehow even managed to create a boolean starts-walking,  sto
 
 This piece of information is actually not that important to how to implement the detectors, but it helps us understand how to use those detectors. 
 
-## Minecraft Game Update Hierachy
+## Minecraft Game Update Hierarchy
 When it comes to command, in every tick, the game processes stuffs in the following hierachy: 
 1. Player action and inherent game mechanism. 
 2. Minecraft functions. 
