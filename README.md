@@ -79,7 +79,7 @@ The following is a list of all the scores:
 | carotClik_bool | edge  | right clicked using carrot stick
 | fungiClik_bool | edge  | right clicked using fungus stick
 | fishrClik_bool | edge  | right clicked using fishing rod
-| container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest\n//blast_furnace/furnace/smoker\n//dispenser/dropper/hopper
+| container_bool | edge  | interacted with a barrel/chest/enderchest/shulker_box/trap_chest<br />//blast_furnace/furnace/smoker<br />//dispenser/dropper/hopper
 
 # How It Works
 ## Scoreboard Criteria
