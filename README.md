@@ -40,7 +40,7 @@ This automatically deletes all the scoreboard objectives created in this datapac
 
 
 # How to Use
-You can use the selector or if-statement in command to check if players have the scores.
+You can use the selector or if-statement in repeating command to check if players have the scores.
 
 - This command gives an apple to players that jumped:
 
