@@ -2,7 +2,7 @@
 A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global boolean system, setting scoreboard objectives xxx_bool to 1 when the players perform some actioins.
 
 - [Abstract](#Abstract)
-- [How to Install/Uninstall](#How-to-Install/Uninstall)
+- [How to Install/Uninstall](#How-to-Install-Uninstall)
 - [How to Use](#How-to-Use)
 - [How It Works](#How-It-Works)
 - [Project Tree](#Project-Tree)
