@@ -115,6 +115,7 @@ When it comes to command, in every tick, the game processes stuffs in the follow
 1. Player action and inherent game mechanism. 
 2. Minecraft functions. 
 3. Minecraft command blocks. 
+
 Keep this in mind, not only for the sake of this post, but also for your future projects. Now without further ado, let's jump right into the logics.
 
 ## Key Idea
