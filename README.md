@@ -183,8 +183,8 @@ The last four lines, which pertain to the `sleep_bool` update, are very standard
 
 So let's try to understand `sleep_begin` and `sleep_end`. The idea is that we use `sleep_bool` as an indicator of state in previous tick, and `sleeper_helper` as an indicator of state in current tick. 
 
-If `bool` is 1 and `helper` > 0, meaning the player was previously not sleeping, but now sleeping, then the sleep begins! \
-If `bool` is 0 and `helper` = 0, meaning the player was previously sleeping, but now not sleeping, then the sleep ends! \
+If `bool` is 0 and `helper` > 0, meaning the player was previously not sleeping, but now sleeping, then the sleep begins! \
+If `bool` is 1 and `helper` = 0, meaning the player was previously sleeping, but now not sleeping, then the sleep ends! \
 
 It's that simple! Using this method we manage to update `begin` and `end`. 
 
