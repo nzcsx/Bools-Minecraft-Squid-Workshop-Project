@@ -306,7 +306,7 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 		│      │      bools.mcfunction
 		│      │      
 		│      └─unload
-		│              bools.mcfunction
+		│             bools.mcfunction
 		│              
 		├─bools
 		│  └─functions
@@ -391,17 +391,62 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 		│          │      tick.mcfunction
 		│          │      
 		│          └─walk
-		│                  clean.mcfunction
-		│                  every_tick.mcfunction
-		│                  load.mcfunction
-		│                  three_ticks.mcfunction
-		│                  tick.mcfunction
+		│                 clean.mcfunction
+		│                 every_tick.mcfunction
+		│                 load.mcfunction
+		│                 three_ticks.mcfunction
+		│                 tick.mcfunction
 		│                  
 		└─minecraft
 		    └─tags
 			└─functions
 				load.json
 				tick.json
+
+# Call Tree
+	  /minecraft/tags/functions/tick.json
+	    └─ bools:classes/main/tick
+	        ├─ bools:classes/bow/tick
+	        ├─ bools:classes/carotclik/tick
+	        ├─ bools:classes/container/tick
+	        ├─ bools:classes/crossbow/tick
+	        ├─ bools:classes/fishrclik/tick
+	        ├─ bools:classes/fungiclik/tick
+	        ├─ bools:classes/jump/tick
+	        ├─ bools:classes/offgrnd/tick
+	        ├─ bools:classes/pearl/tick
+	        ├─ bools:classes/shield/tick
+	        ├─ bools:classes/sleep/tick
+	        ├─ bools:classes/snowball/tick
+	        ├─ bools:classes/shift/tick
+		|   ├─ bools:classes/shift/every_tick
+		|   └─ bools:classes/shift/three_tick
+	        ├─ bools:classes/sprint/tick.mcfunction
+		|   ├─ bools:classes/sprint/every_tick
+		|   └─ bools:classes/sprint/three_tick
+	        └─ bools:classes/walk/tick.mcfunction
+		    ├─ bools:classes/walk/every_tick
+		    └─ bools:classes/walk/three_tick
+			
+	  /minecraft/tags/functions/load.json
+	    └─ bools:classes/main/load
+	        ├─ bools:classes/main/clean
+	        ├─ bools:classes/bow/load
+	        ├─ bools:classes/carotclik/load
+	        ├─ bools:classes/container/load
+	        ├─ bools:classes/crossbow/load
+	        ├─ bools:classes/fishrclik/load
+	        ├─ bools:classes/fungiclik/load
+	        ├─ bools:classes/jump/load
+	        ├─ bools:classes/offgrnd/load
+	        ├─ bools:classes/pearl/load
+	        ├─ bools:classes/shield/load
+	        ├─ bools:classes/sleep/load
+	        ├─ bools:classes/snowball/load
+	        ├─ bools:classes/shift/load
+	        ├─ bools:classes/sprint/load
+	        └─ bools:classes/walk/load
+
 
 
 # FAQ
