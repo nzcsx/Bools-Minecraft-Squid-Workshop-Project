@@ -3,9 +3,10 @@ A [minecraft datapack](https://minecraft.fandom.com/wiki/Data_Pack) for global b
 
 - [Abstract](#Abstract)
 - [Installation](#Installation)
-- [How to Use](#How-to-Use)
-- [How It Works](#How-It-Works)
+- [Usage](#Usage)
+- [Mechanism](#Mechanism)
 - [Project Tree](#Project-Tree)
+- [Call Tree](#Call-Tree)
 - [FAQ](#FAQ)
 - [Terms of Use](#Terms-of-Use)
 - [More About Squid Workshop](#More-About-Squid-Workshop)
@@ -39,7 +40,7 @@ Enable it by:
 This automatically deletes all the scoreboard objectives created in this datapack. 
 
 
-# How to Use
+# Usage
 You can use the selector or if-statement in repeating command to check if players have the scores.
 
 - This command gives an apple to players that jumped:
@@ -81,7 +82,7 @@ The following is a list of all the scores:
 | fishrClik_bool | edge  | right clicked using fishing rod
 | container_bool | edge  | interacted with a <br />barrel / chest / enderchest / shulker_box / trap_chest / <br />blast_furnace / furnace / smoker / <br />dispenser / dropper / hopper
 
-# How It Works
+# Mechanism
 ## Scoreboard Criteria
 First of all I want to talk about how those scoreboard criteria works. Say, we create a new scoreboard objective like this:
 
