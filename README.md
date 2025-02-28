@@ -390,8 +390,8 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 # Call Tree
 	  /minecraft/tags/functions/tick.json
 		├─ bools:container.json advancement
-		|	└─ bools:classes/container/trigger
-		|
+		│	└─ bools:classes/container/trigger
+		│
 	    └─ bools:classes/main/tick
 			├─ bools:classes/bow/tick
 			├─ bools:classes/carotclik/tick
@@ -407,8 +407,8 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 			├─ bools:classes/snowball/tick
 			├─ bools:classes/shift/tick
 			├─ bools:classes/sprint/tick
-			|	├─ bools:classes/sprint/every_tick
-			|	└─ bools:classes/sprint/three_tick
+			│	├─ bools:classes/sprint/every_tick
+			│	└─ bools:classes/sprint/three_tick
 			└─ bools:classes/walk/tick
 				├─ bools:classes/walk/every_tick
 				└─ bools:classes/walk/three_tick
