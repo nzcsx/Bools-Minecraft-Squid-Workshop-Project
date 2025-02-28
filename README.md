@@ -155,17 +155,17 @@ Loop per tick:
 ```
 
 ## Type 2
-Type 2a includes: `sleep_bool`\
-Type 2b includes: `sleep_begin`, `sleep_end`
+Type 2a includes: `sleep_bool`, `shift_bool`\
+Type 2b includes: `sleep_begin`, `sleep_end`, `shift_begin`, `shift_end`,
 
-`sleep_bool` is sort of an oddball. There is no scoreboard criterion related to sleep time. Instead, a player's sleep time is stored as a `SleepTimer` nbt tag. Therefore, we cannot expect the game to update the `sleep_helper` automatically. However, it really isn't much hassel, and we can just manually store the nbt tag value into `sleep_helper` in the beginning of each loop. 
+This type is the continuous variant of Type 1. `sleep_helper` is updated by fetching value from player `SleepTimer` nbt tag (which is updated by game). `shift_helper` is updated by game directly.
 
 Now with those out of the way, let's finally take a look at the logic behind `xxx_begin` and `xxx_end`: 
 
 ```
 Loop per tick:
 
-    # We store SleepTimer value into sleep_helper #
+    # Fame updates helper #
 
     begin = 0
     end = 0
@@ -180,14 +180,14 @@ Loop per tick:
     helper = 0
 ```
 
-The last four lines, which pertain to the `sleep_bool` update, are very standard, exactly the same as Type 1, so I won't reiterate here. 
+The last four lines, which pertain to the `bool` update, are exactly the same as Type 1.
 
-So let's try to understand `sleep_begin` and `sleep_end`. The idea is that we use `sleep_bool` as an indicator of state in previous tick, and `sleeper_helper` as an indicator of state in current tick. 
+So let's try to understand `begin` and `end`. The idea is that we use `bool` as an indicator of state in previous tick, and `helper` as an indicator of state in current tick. 
 
-If `bool` is 0 and `helper` > 0, meaning the player was previously not sleeping, but now sleeping, then the sleep begins! \
-If `bool` is 1 and `helper` = 0, meaning the player was previously sleeping, but now not sleeping, then the sleep ends! \
+If `bool` is 0 and `helper` > 0, meaning the player was previously not doing it, but now doing it, then the action begins! \
+If `bool` is 1 and `helper` = 0, meaning the player was previously doing it, but now not doing it, then the action ends! \
 
-It's that simple! Using this method we manage to update `begin` and `end`. 
+Using this method we manage to update `begin` and `end`. 
 
 ## Type 3
 Type 3b includes: `offGrnd_begin`, `offGrnd_end`
@@ -219,14 +219,14 @@ Loop per tick:
 ```
 
 ## Type 4
-Type 4a includes: `walk_bool`, `shift_bool`, `sprint_bool` \
-Type 4b includes: `walk_begin`, `walk_end`, `shift_begin`, `shift_end`, `sprint_begin`, `sprint_end`
+Type 4a includes: `walk_bool`, `sprint_bool` \
+Type 4b includes: `walk_begin`, `walk_end`, `sprint_begin`, `sprint_end`
 
-Finally! The long waited trio! At first glance, they should be pretty straightforward, why not just reuse the logic for begin and end we used before? 
+At first glance, they should be pretty straightforward. Why not just reuse the logic for begin and end we used before? 
 
-Unfortunately, here is a slight issue: sometimes the game does not increment the continuous-criteria scores (a.k.a the helper) every tick! And since we reset the helper and bool every tick, they are gonna be 0 sometimes in the middle of continuous action! 
+Unfortunately, `helper` scores record in integer centimeters, which means it is possible to have a zero increment dispite player's action.
 
-Clearly we don't want that. My remedy is updating `xxx_helper` and `xxx_bool` less frequently. I update them once every three ticks instead of once every tick. This is from my observation that such irragularity doesn't last more than 2 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. 
+In order to avoid such issue, the workaround is updating `helper` and `bool` less frequently. I update them once every three ticks instead of once every tick. This is from my observation that such irragularity doesn't last more than 2 ticks. Although I cannot eliminate such behavior, I minimized its negative effect. 
 
 Hence now, the logic becomes:
 
@@ -265,32 +265,16 @@ if (shield offhand)
 	shield_bool = 1
 ```
 
-`container_bool` is similar to Type 1 scores. However, because there are multiple containers to consider, there are multiple `helpers`. \
-`helper00` := barrel \
-`helper01` := chest \
-`helper02` := enderchest \
-`helper03` := shulker_box \
-`helper04` := trapped_chest \
-`helper05` := blast_furnace \
-`helper06` := furnace \
-`helper07` := smoker \
-`helper08` := dispenser \
-`helper09` := dropper \
-`helper10` := hopper \
+`container_bool` is similar to Type 1 scores. However, a `helper` is being updated by advancement instead of scoreboard. \
+
 The logic is shown below:
 ```
 Loop per tick:
 
-    # Game updates helper #
+    # Game updates advancement, which may trigger helper=1 #
 
-    bool = 0
-    unless ( helper00 == 0 && ... && helper10 == 0 )
-	bool = 1
-
-    helper00 = 0
-    helper01 = 0
-    ...
-    helper10 = 0
+    bool = helper
+	helper = 0
 ```
 
 # Project Tree
@@ -301,133 +285,133 @@ See [here](https://github.com/Squid-Workshop/MinecraftDatapacksProject/blob/mast
 	    │  pack.png
 	    │  
 	    └─data
-		├─app
-		│  └─functions
-		│      ├─help
-		│      │      bools.mcfunction
-		│      │      
-		│      └─unload
-		│             bools.mcfunction
-		│              
-		├─bools
-		│  └─functions
-		│      └─classes
-		│          ├─main
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─bow
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─carotclik
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─container
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─crossbow
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─fishrclik
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─fungiclik
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─jump
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─offgrnd
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─pearl
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─shield
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─sleep
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─snowball
-		│          │      clean.mcfunction
-		│          │      load.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─shift
-		│          │      clean.mcfunction
-		│          │      every_tick.mcfunction
-		│          │      load.mcfunction
-		│          │      three_ticks.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          ├─sprint
-		│          │      clean.mcfunction
-		│          │      every_tick.mcfunction
-		│          │      load.mcfunction
-		│          │      three_ticks.mcfunction
-		│          │      tick.mcfunction
-		│          │      
-		│          └─walk
-		│                 clean.mcfunction
-		│                 every_tick.mcfunction
-		│                 load.mcfunction
-		│                 three_ticks.mcfunction
-		│                 tick.mcfunction
-		│                  
-		└─minecraft
-		    └─tags
-			└─functions
-				load.json
-				tick.json
+			├─app
+			│  └─functions
+			│      ├─help
+			│      │      bools.mcfunction
+			│      │      
+			│      └─unload
+			│             bools.mcfunction
+			│              
+			├─bools
+			│  └─functions
+			│      └─classes
+			│          ├─main
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─bow
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─carotclik
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─container
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      trigger.mcfunction
+			│          │      
+			│          ├─crossbow
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─fishrclik
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─fungiclik
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─jump
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─offgrnd
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─pearl
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─shield
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─sleep
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─snowball
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─shift
+			│          │      clean.mcfunction
+			│          │      load.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          ├─sprint
+			│          │      clean.mcfunction
+			│          │      every_tick.mcfunction
+			│          │      load.mcfunction
+			│          │      three_ticks.mcfunction
+			│          │      tick.mcfunction
+			│          │      
+			│          └─walk
+			│                 clean.mcfunction
+			│                 every_tick.mcfunction
+			│                 load.mcfunction
+			│                 three_ticks.mcfunction
+			│                 tick.mcfunction
+			│                  
+			└─minecraft
+				└─tags
+				└─functions
+					load.json
+					tick.json
 
 # Call Tree
 	  /minecraft/tags/functions/tick.json
+		├─ bools:container.json advancement
+		|	└─ bools:classes/container/trigger
+		|
 	    └─ bools:classes/main/tick
-	        ├─ bools:classes/bow/tick
-	        ├─ bools:classes/carotclik/tick
-	        ├─ bools:classes/container/tick
-	        ├─ bools:classes/crossbow/tick
-	        ├─ bools:classes/fishrclik/tick
-	        ├─ bools:classes/fungiclik/tick
-	        ├─ bools:classes/jump/tick
-	        ├─ bools:classes/offgrnd/tick
-	        ├─ bools:classes/pearl/tick
-	        ├─ bools:classes/shield/tick
-	        ├─ bools:classes/sleep/tick
-	        ├─ bools:classes/snowball/tick
-	        ├─ bools:classes/shift/tick
-		|   ├─ bools:classes/shift/every_tick
-		|   └─ bools:classes/shift/three_tick
-	        ├─ bools:classes/sprint/tick.mcfunction
-		|   ├─ bools:classes/sprint/every_tick
-		|   └─ bools:classes/sprint/three_tick
-	        └─ bools:classes/walk/tick.mcfunction
-		    ├─ bools:classes/walk/every_tick
-		    └─ bools:classes/walk/three_tick
+			├─ bools:classes/bow/tick
+			├─ bools:classes/carotclik/tick
+			├─ bools:classes/container/tick
+			├─ bools:classes/crossbow/tick
+			├─ bools:classes/fishrclik/tick
+			├─ bools:classes/fungiclik/tick
+			├─ bools:classes/jump/tick
+			├─ bools:classes/offgrnd/tick
+			├─ bools:classes/pearl/tick
+			├─ bools:classes/shield/tick
+			├─ bools:classes/sleep/tick
+			├─ bools:classes/snowball/tick
+			├─ bools:classes/shift/tick
+			├─ bools:classes/sprint/tick
+			|	├─ bools:classes/sprint/every_tick
+			|	└─ bools:classes/sprint/three_tick
+			└─ bools:classes/walk/tick
+				├─ bools:classes/walk/every_tick
+				└─ bools:classes/walk/three_tick
 			
 	  /minecraft/tags/functions/load.json
 	    └─ bools:classes/main/load
