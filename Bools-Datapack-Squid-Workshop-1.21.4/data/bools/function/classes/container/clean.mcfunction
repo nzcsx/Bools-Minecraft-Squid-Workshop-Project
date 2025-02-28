@@ -1,0 +1,2 @@
+scoreboard objectives remove container_bool
+scoreboard objectives remove container_helper

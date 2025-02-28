@@ -4,5 +4,5 @@ function bools:classes/main/clean
 
 ########################################
 # Disable this pack
-datapack disable "file/Bools-Datapack-Squid-Workshop-1.16.5"
-datapack disable "file/Bools-Datapack-Squid-Workshop-1.16.5.zip"
+datapack disable "file/Bools-Datapack-Squid-Workshop-1.21.4"
+datapack disable "file/Bools-Datapack-Squid-Workshop-1.21.4.zip"

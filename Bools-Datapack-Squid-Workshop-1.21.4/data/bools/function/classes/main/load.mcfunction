@@ -7,10 +7,10 @@ function bools:classes/main/clean
 ########################################
 # Create all the helper variables
 function bools:classes/walk/load
-function bools:classes/shift/load
 function bools:classes/sprint/load
 
 function bools:classes/sleep/load
+function bools:classes/shift/load
 function bools:classes/jump/load
 function bools:classes/offgrnd/load
 
