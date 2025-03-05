@@ -141,7 +141,7 @@ The game updates the helper objective scores as an inherent game mechanism. Afte
 
 Type 1 includes: `jump_bool`, `bow_bool`, `crossbow_bool`, `pearl_bool`, `snowball_bool`, `carotClik_bool`, `fungiClik_bool`, `fishrClik_bool` 
 
-Notice how `walk_bool`, `shift_bool`, and `sprint_bool` are missing from the list, and all of the Type 1 scores are _edge_ scores? We are going to explain why in detail in Type 4 section. For now, just know that Type 1 is exactly the same as the key idea above. 
+Notice how `walk_bool` and `sprint_bool` are missing from the list, and all of the Type 1 scores are _edge_ scores? We are going to explain why in detail in Type 4 section. For now, just know that Type 1 is exactly the same as the key idea above. 
 
 ```
 Loop per tick:
