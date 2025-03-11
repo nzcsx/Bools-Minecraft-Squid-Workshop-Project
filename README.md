@@ -456,12 +456,12 @@ A: Because when we don't want to play with these scores anymore, we can just del
 
 
 Q: What is the meaning of life? \
-A: You didn't know? It's just █̵̭̩̦͍̒͑█̵̳̝̃̚█̷̨̺̮͈̆̓͠█̷̙͑█
+A: \[Redacted\]
 
 
 
 Q: What if I want more bools? \
-A: You can create "issues" here on GitHub to make a suggestion.
+A: You can add your own function under the tag `#bools:tick`(i.e. `data/bools/tags/function/tick.json`) inside your own data pack. This will automatically make your functions run by this data pack.
 
 
 

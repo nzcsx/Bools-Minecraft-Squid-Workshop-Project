@@ -1,0 +1,24 @@
+{
+  "values": [
+    "bools:classes/walk/tick",
+    "bools:classes/shift/tick",
+    "bools:classes/sprint/tick",
+
+    "bools:classes/sleep/tick",
+    "bools:classes/jump/tick",
+    "bools:classes/offgrnd/tick",
+
+    "bools:classes/shield/tick",
+    "bools:classes/bow/tick",
+    "bools:classes/crossbow/tick",
+    "bools:classes/pearl/tick",
+    "bools:classes/snowball/tick",
+
+    
+    "bools:classes/carotclik/tick",
+    "bools:classes/fungiclik/tick",
+    "bools:classes/fishrclik/tick",
+
+    "bools:classes/container/tick"
+  ]
+}
